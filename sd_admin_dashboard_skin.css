@@ -1,0 +1,141 @@
+/* ============================================================
+   AI TAX ADVISERS - Admin Dashboard Skin
+   Scoped under #dashboard-view per sd-admin-dashboards.md S1
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- KPI / Reporting Tiles --- */
+#dashboard-view .reporting__block {
+  background: #FFFAF4 !important;
+  border: 1px solid rgba(139, 21, 56, 0.14) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 12px rgba(139, 21, 56, 0.08) !important;
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+#dashboard-view .reporting__block:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 16px 40px rgba(139, 21, 56, 0.14) !important;
+}
+
+#dashboard-view .reporting__block__title__text {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+  color: #6B5260 !important;
+  -webkit-text-fill-color: #6B5260 !important;
+  font-size: 11px !important;
+  letter-spacing: 1.6px !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+#dashboard-view .reporting__block__value__current {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  color: #1A0B14 !important;
+  -webkit-text-fill-color: #1A0B14 !important;
+  background: none !important;
+  font-weight: 600 !important;
+}
+
+#dashboard-view .reporting__block__value__trend--positive {
+  color: #2E7D32 !important;
+  -webkit-text-fill-color: #2E7D32 !important;
+}
+#dashboard-view .reporting__block__value__trend--negative {
+  color: #C62828 !important;
+  -webkit-text-fill-color: #C62828 !important;
+}
+#dashboard-view .reporting__block__value__trend--none {
+  color: #6B5260 !important;
+  -webkit-text-fill-color: #6B5260 !important;
+}
+
+#dashboard-view .reporting__block__progress__value {
+  color: #8B1538 !important;
+  -webkit-text-fill-color: #8B1538 !important;
+}
+
+#dashboard-view .reporting__block__view-button,
+#dashboard-view .reporting__block__view-button span,
+#dashboard-view .reporting__block__chart__button a {
+  color: #E91E63 !important;
+  -webkit-text-fill-color: #E91E63 !important;
+  font-weight: 600 !important;
+}
+
+#dashboard-view .reporting__block__title__icon {
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, #E91E63, #8B1538) !important;
+}
+
+/* --- Panel Widgets (Projects, Activity Stream, Tasks) --- */
+#dashboard-view .dashboard-organize-box.card {
+  background-color: #FFFAF4 !important;
+  border: 1px solid rgba(139, 21, 56, 0.14) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 2px 12px rgba(139, 21, 56, 0.08) !important;
+  margin: 0 0 12px 0 !important;
+  overflow: hidden !important;
+}
+
+#dashboard-view .dashboard-organize-box__header {
+  border-bottom: 1px solid rgba(139, 21, 56, 0.10) !important;
+  padding: 16px 20px !important;
+}
+
+#dashboard-view .dashboard-organize-box__header-title.widget-title {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 700 !important;
+  color: #1A0B14 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.3px !important;
+}
+
+#dashboard-view .dashboard-organize-box__footer {
+  border-top: 1px solid rgba(139, 21, 56, 0.10) !important;
+}
+
+#dashboard-view .dashboard-organize-box__footer-btn {
+  color: #E91E63 !important;
+  font-weight: 600 !important;
+  border-color: #E91E63 !important;
+  border-radius: 999px !important;
+}
+#dashboard-view .dashboard-organize-box__footer-btn:hover {
+  background: #E91E63 !important;
+  color: #FFFFFF !important;
+}
+
+/* --- Project Rows --- */
+#dashboard-view .dashboard-item.dashboard-item--project {
+  border-bottom: 1px solid rgba(139, 21, 56, 0.08) !important;
+}
+#dashboard-view .dashboard-item__title {
+  font-family: "Inter", sans-serif !important;
+  font-weight: 600 !important;
+  color: #1A0B14 !important;
+}
+
+/* --- Activity Stream Rows --- */
+#dashboard-view .dashboard-item.dashboard-item--live-stream .dashboard-item__title {
+  white-space: normal !important;
+  overflow: visible !important;
+}
+#dashboard-view .default-user-avatar {
+  background: linear-gradient(135deg, #E91E63, #8B1538) !important;
+  color: #FFFFFF !important;
+  font-family: "Cormorant Garamond", serif !important;
+  font-weight: 600 !important;
+}
+
+/* --- Hide Stack source code artifact on dashboard --- */
+#dashboard-view .cbe-block-embed {
+  display: none !important;
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  #dashboard-view .reporting__block {
+    transition: none !important;
+  }
+}
