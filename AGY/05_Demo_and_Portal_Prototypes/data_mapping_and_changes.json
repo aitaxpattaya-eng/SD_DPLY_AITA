@@ -1,0 +1,316 @@
+{
+  "title": "SuiteDash Data Mapping, Audit & Change Log",
+  "generated_at": "2026-08-24T15:37:30Z",
+  "author": "Antigravity AI (Lead Platform Architect)",
+  "firm": "American International Tax Advisers Co., Ltd.",
+  "suiteDash_host": "https://secure.aitaxadvisers.com",
+  
+  "data_availability_analysis": {
+    "available_in_suiteDash": [
+      {
+        "field_name": "Contact Full Name (First + Last)",
+        "source": "/secure-api/contacts",
+        "status_in_demo": "Utilized (100% Real Client Names Kept Intact)"
+      },
+      {
+        "field_name": "Company / Entity Name",
+        "source": "/secure-api/contacts -> company_name",
+        "status_in_demo": "Utilized (Sanitized / Obfuscated Business Entities)"
+      },
+      {
+        "field_name": "Primary Email Address",
+        "source": "/secure-api/contacts -> email",
+        "status_in_demo": "Utilized (Masked / Obfuscated format: g***@aitaxadvisers.com)"
+      },
+      {
+        "field_name": "Phone / Mobile Number",
+        "source": "/secure-api/contacts -> phone",
+        "status_in_demo": "Utilized (Masked / Obfuscated format: +66 (0) 2-***-4589)"
+      },
+      {
+        "field_name": "Physical Address / Location",
+        "source": "/secure-api/contacts -> address / city / state / country",
+        "status_in_demo": "Utilized (Obfuscated street numbers, authentic city/country)"
+      },
+      {
+        "field_name": "Tax Filing Status (Custom Field)",
+        "source": "/secure-api/contact/meta -> 1a7d1872-cb2f-412e-bdf1-eec49e4c5bcf",
+        "status_in_demo": "Added & Displayed in Portal & Reception Consoles"
+      },
+      {
+        "field_name": "Last Return Filed (Custom Field)",
+        "source": "/secure-api/contact/meta -> 392f0dc3-1e58-4ee3-9e4a-43642ba0fa42",
+        "status_in_demo": "Added & Displayed in Client CRM Panels"
+      },
+      {
+        "field_name": "Referral Source (Custom Field)",
+        "source": "/secure-api/contact/meta -> a9d3752e-6ef8-4903-b0ee-7c646b38411b",
+        "status_in_demo": "Added & Displayed in Marketing & Executive ROI Panels"
+      },
+      {
+        "field_name": "Preferred Language (Custom Field)",
+        "source": "/secure-api/contact/meta -> cb9c336b-efbc-4ef6-bb4d-452f4a4df2c5",
+        "status_in_demo": "Added to Client Profile Cards"
+      },
+      {
+        "field_name": "US Taxpayer / Thai Taxpayer Flags",
+        "source": "/secure-api/contact/meta -> f1680ff1-5ca1-4fa3-9585-48faea70bfd7 / c2dcbb87-6e9f-4eb7-a5ec-3a31c5ae1245",
+        "status_in_demo": "Added to Client Header & Pipeline Routing"
+      },
+      {
+        "field_name": "Permission Circles",
+        "source": "/circle/manage (e.g. All Active Clients, Staff - Tax Preparer, Thai Tax, Streamline)",
+        "status_in_demo": "Utilized in Manager Roster & Client Security Badges"
+      },
+      {
+        "field_name": "Deal Pipelines & 8 Kanban Stages",
+        "source": "/crmDealsPipelines/ (95885: US 1040, 95886: Thai Tax, 95887: Corporate)",
+        "status_in_demo": "Utilized (Exact 8-Stage Sequential Workflow Aligned)"
+      },
+      {
+        "field_name": "5-Tier Filing Cabinet Folder Generator",
+        "source": "/files/profiles -> Tax Year Filing Cabinet (01 Docs to 05 Final)",
+        "status_in_demo": "Utilized across Client Portal Document Vaults"
+      },
+      {
+        "field_name": "Project Task Templates & Generators",
+        "source": "/pm/pmProjectTemplate/admin -> Prepare Tax (3 Phases, 8 Tasks)",
+        "status_in_demo": "Utilized in Readiness Meter & Checklist Workflows"
+      }
+    ],
+    "previously_unutilized_sd_data": [
+      "Custom Field: Tax Filing Status (Single, MFJ, HOH, C-Corp)",
+      "Custom Field: Last Return Filed (Prior year compliance history)",
+      "Custom Field: Referral Source (Attribution tracking)",
+      "Custom Field: Preferred Language (Multilingual dispatch)",
+      "Custom Field: US Taxpayer & Thai Taxpayer Boolean flags",
+      "5-Tier Segregated Filing Cabinet Directory Structure",
+      "Exact 8-Stage Canonical Deal Pipeline Progression",
+      "Staff Roster roles (Chetan Nama, Thomas Carden, Sumitr Ruangwattanasakul, Mattias Rattelmeier)"
+    ]
+  },
+
+  "sanitized_clients_dataset": [
+    {
+      "id": "SD-CLIENT-001",
+      "name": "Gerard Flanagan",
+      "first_name": "Gerard",
+      "last_name": "Flanagan",
+      "company_name": "Flanagan International Consulting",
+      "email_obfuscated": "g***@aitaxadvisers.com",
+      "phone_obfuscated": "+66 (0) 2-***-4589",
+      "address_obfuscated": "Sukhumvit Rd, Khlong Toei, Bangkok, Thailand 10110",
+      "tax_year": "2025",
+      "filing_type": "US Form 1040 Expat Return",
+      "pipeline": "US Tax Returns (1040)",
+      "stage": "Chetan Review (70%)",
+      "approximate_fee": "$1,850",
+      "assigned_advisor": "Chetan Nama (Senior Tax Manager & QA)",
+      "custom_fields": {
+        "Tax Filing Status": "Single",
+        "Last Return Filed": "2024 (Filed on Time)",
+        "Referral Source": "Client Referral",
+        "Preferred Language": "English",
+        "US Taxpayer": "Yes",
+        "Thai Taxpayer": "No"
+      },
+      "filing_cabinet_sample": [
+        "01 Client Provided Docs / Passport & Identity (0.8 MB)",
+        "02 Workpapers / Expat Calculation Summary (1.1 MB)",
+        "03 Draft Returns / Form 1040 Draft (2025) (2.4 MB)",
+        "05 Final Filed Return / 2024 Form 1040 Final (3.1 MB)"
+      ]
+    },
+    {
+      "id": "SD-CLIENT-002",
+      "name": "Dennis Manley",
+      "first_name": "Dennis",
+      "last_name": "Manley",
+      "company_name": "Manley Logistics International",
+      "email_obfuscated": "d.manley@***.com",
+      "phone_obfuscated": "+1 (555) ***-4912",
+      "address_obfuscated": "*** 17th Street, Denver, CO 80202 / Bangkok",
+      "tax_year": "2025",
+      "filing_type": "US Form 1040 + FinCEN 114 (FBAR)",
+      "pipeline": "US Tax Returns (1040)",
+      "stage": "Processing Return (50%)",
+      "approximate_fee": "$2,400",
+      "assigned_advisor": "Thomas Carden (Senior Tax Preparer)",
+      "custom_fields": {
+        "Tax Filing Status": "Married Filing Jointly",
+        "Last Return Filed": "2024",
+        "Referral Source": "Expat Community Forum",
+        "Preferred Language": "English",
+        "US Taxpayer": "Yes",
+        "Thai Taxpayer": "No"
+      },
+      "filing_cabinet_sample": [
+        "01 Client Provided Docs / Bangkok Bank Statement (1.4 MB)",
+        "03 Draft Returns / FinCEN 114 FBAR Worksheet (0.9 MB)",
+        "05 Final Filed Return / 2024 Form 1040 Final (2.8 MB)"
+      ]
+    },
+    {
+      "id": "SD-CLIENT-003",
+      "name": "Emily Johnson",
+      "first_name": "Emily",
+      "last_name": "Johnson",
+      "company_name": "Johnson Education Services",
+      "email_obfuscated": "e.johnson@***.com",
+      "phone_obfuscated": "+66 (0) 53-***-8821",
+      "address_obfuscated": "Nimmanahaeminda Rd, Suthep, Chiang Mai, Thailand 50200",
+      "tax_year": "2025",
+      "filing_type": "US Form 1040 + Foreign Tax Credit",
+      "pipeline": "US Tax Returns (1040)",
+      "stage": "Information Gathering (25%)",
+      "approximate_fee": "$1,650",
+      "assigned_advisor": "Chris Mc Laughlin (Tax Preparer)",
+      "custom_fields": {
+        "Tax Filing Status": "Single",
+        "Last Return Filed": "2024",
+        "Referral Source": "Direct Client Portal",
+        "Preferred Language": "English",
+        "US Taxpayer": "Yes",
+        "Thai Taxpayer": "No"
+      },
+      "filing_cabinet_sample": [
+        "01 Client Provided Docs / Employer 1 W-2 Statement (0.4 MB)",
+        "01 Client Provided Docs / Tax Organizer 2025 (1.2 MB)"
+      ]
+    },
+    {
+      "id": "SD-CLIENT-004",
+      "name": "Garrath Ford",
+      "first_name": "Garrath",
+      "last_name": "Ford",
+      "company_name": "Ford Maritime Consulting",
+      "email_obfuscated": "g.ford@***.com",
+      "phone_obfuscated": "+66 (0) 38-***-3341",
+      "address_obfuscated": "Beach Rd, Bang Lamung, Chon Buri (Pattaya), Thailand 20150",
+      "tax_year": "2025",
+      "filing_type": "Thai Personal Income Tax (P.N.D. 91)",
+      "pipeline": "Thai Tax Returns",
+      "stage": "Processing Return (50%)",
+      "approximate_fee": "฿18,500 (~$550)",
+      "assigned_advisor": "Sumitr Ruangwattanasakul (Thai Tax Specialist)",
+      "custom_fields": {
+        "Tax Filing Status": "Thai Tax Resident",
+        "Last Return Filed": "2024 (P.N.D. 91)",
+        "Referral Source": "Google Search",
+        "Preferred Language": "English / Thai",
+        "US Taxpayer": "No",
+        "Thai Taxpayer": "Yes"
+      },
+      "filing_cabinet_sample": [
+        "02 Workpapers / 50 Tawi Withholding Certificate (0.7 MB)",
+        "03 Draft Returns / P.N.D. 91 Draft Return (1.3 MB)",
+        "05 Final Filed Return / 2024 Thai Tax Receipt (1.5 MB)"
+      ]
+    },
+    {
+      "id": "SD-CLIENT-005",
+      "name": "Karl Axelsson",
+      "first_name": "Karl",
+      "last_name": "Axelsson",
+      "company_name": "Axelsson Nordic Tech Co., Ltd.",
+      "email_obfuscated": "k.axelsson@***.com",
+      "phone_obfuscated": "+66 (0) 2-***-9901",
+      "address_obfuscated": "Sathorn Rd, Silom, Bang Rak, Bangkok, Thailand 10500",
+      "tax_year": "2025",
+      "filing_type": "Corporate Entity Return (Form 1120)",
+      "pipeline": "Corporate / Entity Returns",
+      "stage": "Client Review (85%)",
+      "approximate_fee": "$4,800",
+      "assigned_advisor": "Chetan Nama (Tax Manager)",
+      "custom_fields": {
+        "Tax Filing Status": "C-Corporation (1120)",
+        "Last Return Filed": "2024",
+        "Referral Source": "Corporate Inbound",
+        "Preferred Language": "English / Swedish",
+        "US Taxpayer": "Yes",
+        "Thai Taxpayer": "Yes"
+      },
+      "filing_cabinet_sample": [
+        "02 Workpapers / Reconciled Financials & P&L (2.1 MB)",
+        "03 Draft Returns / Form 1120 Draft Return (3.8 MB)",
+        "05 Final Filed Return / 2024 Form 1120 Final (4.2 MB)"
+      ]
+    },
+    {
+      "id": "SD-CLIENT-006",
+      "name": "Peter Woods",
+      "first_name": "Peter",
+      "last_name": "Woods",
+      "company_name": "Woods Financial Advisory",
+      "email_obfuscated": "p.woods@***.com",
+      "phone_obfuscated": "+66 (0) 2-***-7712",
+      "address_obfuscated": "Wireless Rd, Lumphini, Pathum Wan, Bangkok, Thailand 10330",
+      "tax_year": "2025",
+      "filing_type": "Dual US 1040 & Thai Tax Filings",
+      "pipeline": "US Tax Returns (1040)",
+      "stage": "Awaiting Payment (95%)",
+      "approximate_fee": "$2,950",
+      "assigned_advisor": "Asa Mizoi (Tax Preparer)",
+      "custom_fields": {
+        "Tax Filing Status": "Dual Filer (US + Thai)",
+        "Last Return Filed": "2024",
+        "Referral Source": "Returning Client",
+        "Preferred Language": "English",
+        "US Taxpayer": "Yes",
+        "Thai Taxpayer": "Yes"
+      },
+      "filing_cabinet_sample": [
+        "03 Draft Returns / Form 1040 Final Package (2.6 MB)",
+        "03 Draft Returns / Thai PIT 91 Package (1.1 MB)",
+        "04 Signed Forms / Form 8879 Signed (2025) (1.2 MB)"
+      ]
+    },
+    {
+      "id": "SD-CLIENT-007",
+      "name": "Aaron Yip",
+      "first_name": "Aaron",
+      "last_name": "Yip",
+      "company_name": "Yip Strategic Holdings",
+      "email_obfuscated": "a.yip@***.com",
+      "phone_obfuscated": "+852 ***-6621 / Bangkok",
+      "address_obfuscated": "Thong Lo 13, Khlong Tan Nuea, Watthana, Bangkok 10110",
+      "tax_year": "2025",
+      "filing_type": "Streamlined Foreign Offshore Procedure (SFOP)",
+      "pipeline": "US Tax Returns (1040)",
+      "stage": "Intake / Quotation (10%)",
+      "approximate_fee": "$5,500",
+      "assigned_advisor": "Chetan Nama (Tax Manager & SFOP Lead)",
+      "custom_fields": {
+        "Tax Filing Status": "Streamlined Procedure (SFOP)",
+        "Last Return Filed": "Delinquent Catch-up (3 Yrs)",
+        "Referral Source": "Professional Referral",
+        "Preferred Language": "English / Cantonese",
+        "US Taxpayer": "Yes",
+        "Thai Taxpayer": "No"
+      },
+      "filing_cabinet_sample": [
+        "01 Client Provided Docs / Form 14653 Questionnaire (1.5 MB)",
+        "01 Client Provided Docs / Foreign Bank Inventory (0.9 MB)"
+      ]
+    }
+  ],
+
+  "file_change_log": [
+    {
+      "file": "DEMO/app.js",
+      "changes": "Reconciled all DATA objects (reception schedule, lobby, calls, preparer kanban, manager workload, marketing leads, executive revenue) to use the 7 sanitized real clients, exact 8-stage SuiteDash pipeline taxonomy, and actual team roster."
+    },
+    {
+      "file": "DEMO/portal.html",
+      "changes": "Added multi-client interactive switcher dropdown in the header; added dynamic readiness meter, document vault reflecting the 5-tier Filing Cabinet structure, advisor message feed, and e-signature modal."
+    },
+    {
+      "file": "DEMO/SCHEME2/portal.html",
+      "changes": "Created Scheme 2 portal client switcher with full SuiteDash Custom Fields strip (Tax Filing Status, Last Return Filed, Referral Source, Preferred Language, Taxpayer flags), Filing Cabinet vault, and obfuscated CRM information card."
+    },
+    {
+      "file": "DEMO/SCHEME2/index.html",
+      "changes": "Populated Reception Visitor Queue, 8-Stage Kanban board, Staff Roster, and Lead Acquisition consoles with real sanitized client records, approximate fees, and accurate staff assignments."
+    }
+  ]
+}

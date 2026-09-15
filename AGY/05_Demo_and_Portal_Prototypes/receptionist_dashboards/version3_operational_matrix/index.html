@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AITA — Operational Matrix & Schedule (V3)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --aitax-blue: #003366;
+      --aitax-blue-dark: #001f3f;
+      --aitax-red: #d9534f;
+      --aitax-maroon: #7A2021;
+      --aitax-gold: #ffc107;
+      --aitax-bg: #f1f5f9;
+      --aitax-card: #ffffff;
+      --aitax-text: #0f172a;
+      --aitax-muted: #64748b;
+      --aitax-border: #cbd5e1;
+      --aitax-success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', 'Prompt', sans-serif;
+      background: var(--aitax-bg);
+      color: var(--aitax-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Matrix Header */
+    .matrix-header {
+      background: var(--aitax-blue);
+      color: white;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid var(--aitax-red);
+    }
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title i { color: var(--aitax-gold); }
+
+    .staff-live-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .staff-badge {
+      background: rgba(255,255,255,0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot-online { width: 8px; height: 8px; border-radius: 50%; background: var(--aitax-success); }
+    .dot-busy { width: 8px; height: 8px; border-radius: 50%; background: var(--aitax-red); }
+
+    /* Layout */
+    .matrix-body {
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* Main Timeline & Schedule */
+    .timeline-card {
+      background: white;
+      border-radius: 10px;
+      border: 1px solid var(--aitax-border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .timeline-header {
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-bottom: 1px solid var(--aitax-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      color: var(--aitax-blue);
+    }
+    .timeline-header span { text-transform: uppercase; font-size: 0.9rem; }
+
+    .schedule-grid {
+      display: flex;
+      flex-direction: column;
+    }
+    .time-slot-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      border-bottom: 1px solid #f1f5f9;
+      min-height: 70px;
+    }
+    .slot-time {
+      background: #f8fafc;
+      padding: 14px 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--aitax-muted);
+      border-right: 1px solid var(--aitax-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .slot-content {
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      overflow-x: auto;
+    }
+
+    .booking-card {
+      background: #ffffff;
+      border: 1px solid var(--aitax-border);
+      border-left: 4px solid var(--aitax-blue);
+      padding: 8px 14px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 240px;
+    }
+    .booking-card.urgent { border-left-color: var(--aitax-red); background: #fff5f5; }
+    .booking-card.thai { border-left-color: var(--aitax-gold); }
+
+    .booking-name { font-size: 0.85rem; font-weight: 800; color: var(--aitax-blue); }
+    .booking-meta { font-size: 0.75rem; color: var(--aitax-muted); display: flex; justify-content: space-between; }
+
+    /* Right Column: Fast CRM Logger */
+    .sidebar-logger {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .log-card {
+      background: white;
+      border-radius: 10px;
+      border: 1px solid var(--aitax-border);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .log-card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--aitax-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .log-card-title i { color: var(--aitax-maroon); }
+
+    .form-field { display: flex; flex-direction: column; gap: 4px; }
+    .form-field label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--aitax-muted); }
+    .form-field input, .form-field select, .form-field textarea {
+      padding: 8px 10px;
+      border: 1px solid var(--aitax-border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.85rem;
+    }
+
+    .btn-log-action {
+      padding: 10px;
+      background: var(--aitax-maroon);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-log-action:hover { background: #5c1819; }
+
+    .recent-logs {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 240px;
+      overflow-y: auto;
+    }
+    .recent-log-entry {
+      background: #f8fafc;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--aitax-border);
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .log-meta-line { display: flex; justify-content: space-between; font-weight: 700; color: var(--aitax-blue); }
+
+    @media (max-width: 991px) {
+      .matrix-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Ribbon -->
+  <header class="matrix-header">
+    <div class="brand-title">
+      <i class="fa-solid fa-chart-network"></i>
+      <span>AITA FRONT OFFICE OPERATIONS MATRIX</span>
+    </div>
+    <div class="staff-live-strip">
+      <div class="staff-badge"><span class="dot-online"></span> Chetan Nama (Partner)</div>
+      <div class="staff-badge"><span class="dot-busy"></span> Thomas Carden (In 1040 Prep)</div>
+      <div class="staff-badge"><span class="dot-online"></span> Sumitr (Thai Tax)</div>
+      <div class="staff-badge"><span class="dot-online"></span> Reception Active</div>
+    </div>
+  </header>
+
+  <div class="matrix-body">
+    
+    <!-- Timeline Matrix -->
+    <main class="timeline-card">
+      <div class="timeline-header">
+        <span><i class="fa-solid fa-calendar-day me-2"></i> Today's Schedule & Arrivals (Bangkok Desk)</span>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--aitax-maroon);"><i class="fa-solid fa-clock me-1"></i> Live Active Window</span>
+      </div>
+
+      <div class="schedule-grid">
+        <div class="time-slot-row">
+          <div class="slot-time">09:00 - 10:00</div>
+          <div class="slot-content">
+            <div class="booking-card">
+              <span class="booking-name">Karl Axelsson (Corporate 1120)</span>
+              <span class="booking-meta"><span>Advisor: Chetan Nama</span><span style="color:var(--aitax-success);font-weight:700;">Completed</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-slot-row">
+          <div class="slot-time">10:30 - 11:30</div>
+          <div class="slot-content">
+            <div class="booking-card">
+              <span class="booking-name">Emily Johnson (US 1040 + FTC)</span>
+              <span class="booking-meta"><span>Advisor: Chris Mc Laughlin</span><span>Room B</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-slot-row">
+          <div class="slot-time">13:00 - 14:00</div>
+          <div class="slot-content">
+            <div class="booking-card urgent">
+              <span class="booking-name">Gerard Flanagan (US 1040 Expat)</span>
+              <span class="booking-meta"><span>Advisor: Chetan Nama</span><span style="color:var(--aitax-red);font-weight:700;">In Progress</span></span>
+            </div>
+            <div class="booking-card thai">
+              <span class="booking-name">Garrath Ford (Thai PIT 91)</span>
+              <span class="booking-meta"><span>Advisor: Sumitr R.</span><span>Counter 2</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-slot-row">
+          <div class="slot-time">14:30 - 15:30</div>
+          <div class="slot-content">
+            <div class="booking-card">
+              <span class="booking-name">Dennis Manley (US 1040 + FBAR)</span>
+              <span class="booking-meta"><span>Advisor: Thomas Carden</span><span>Main Office</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="time-slot-row">
+          <div class="slot-time">16:00 - 17:00</div>
+          <div class="slot-content">
+            <div class="booking-card">
+              <span class="booking-name">Aaron Yip (SFOP Package Review)</span>
+              <span class="booking-meta"><span>Advisor: Chetan Nama</span><span>Virtual Zoom</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Sidebar: Fast CRM Activity Logger -->
+    <aside class="sidebar-logger">
+      <div class="log-card">
+        <div class="log-card-title">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <span>Instant CRM Follow-Up</span>
+        </div>
+
+        <div class="form-field">
+          <label>Activity Category</label>
+          <select id="log-category">
+            <option>Walk-In Visit</option>
+            <option>Call Log</option>
+            <option>Email Correspondence</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label>Select Client</label>
+          <select id="log-client">
+            <option>Gerard Flanagan</option>
+            <option>Dennis Manley</option>
+            <option>Emily Johnson</option>
+            <option>Garrath Ford</option>
+            <option>Karl Axelsson</option>
+            <option>Peter Woods</option>
+            <option>Aaron Yip</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label>Reception Notes</label>
+          <textarea id="log-note" rows="3" placeholder="e.g. Delivered 2023 W-2 and Thai bank statements..."></textarea>
+        </div>
+
+        <button class="btn-log-action" onclick="saveCrmLog()"><i class="fa-solid fa-floppy-disk me-1"></i> Save to SuiteDash CRM</button>
+      </div>
+
+      <div class="log-card">
+        <div class="log-card-title" style="font-size: 0.85rem;">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          <span>Recent Reception Logs</span>
+        </div>
+        <div class="recent-logs" id="recent-logs-list">
+          <div class="recent-log-entry">
+            <div class="log-meta-line"><span>Gerard Flanagan</span><span>14:15</span></div>
+            <div style="color: var(--aitax-muted);">Walk-In: Brought signed Thai lease agreement for housing deduction.</div>
+          </div>
+          <div class="recent-log-entry">
+            <div class="log-meta-line"><span>Karl Axelsson</span><span>12:20</span></div>
+            <div style="color: var(--aitax-muted);">Call Log: Confirmed 1120 extension acceptance by IRS.</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    function saveCrmLog() {
+      const client = document.getElementById('log-client').value;
+      const cat = document.getElementById('log-category').value;
+      const note = document.getElementById('log-note').value.trim();
+      if (!note) return alert('Please enter reception notes.');
+
+      const list = document.getElementById('recent-logs-list');
+      const entry = document.createElement('div');
+      entry.className = 'recent-log-entry';
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+      entry.innerHTML = `
+        <div class="log-meta-line"><span>${client}</span><span>${time}</span></div>
+        <div style="color: var(--aitax-muted);">${cat}: ${note}</div>
+      `;
+
+      list.prepend(entry);
+      document.getElementById('log-note').value = '';
+      alert(`[SuiteDash Synchronized] Logged "${cat}" under client profile for ${client}`);
+    }
+  </script>
+</body>
+</html>

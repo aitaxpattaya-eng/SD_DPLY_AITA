@@ -1,0 +1,88 @@
+{
+  "title": "SuiteDash Platform & Demo Suite Suggested Improvements",
+  "generated_at": "2026-08-24T15:37:45Z",
+  "author": "Antigravity AI (Lead Platform Architect)",
+  "firm": "American International Tax Advisers Co., Ltd.",
+  "target_environment": "SuiteDash Live + Tailscale Prototype Previews",
+
+  "improvement_categories": [
+    {
+      "category": "1. Live SuiteDash API & Webhook Integration",
+      "priority": "HIGH",
+      "recommendations": [
+        {
+          "id": "IMP-API-01",
+          "title": "Lightweight Node/Express API Proxy for Real-Time Sync",
+          "description": "Currently the demo uses client-side static representations of the 7 sanitized clients. Creating a lightweight local proxy (`server.js`) that queries `/secure-api/contacts` and `/secure-api/crm/deals` will allow the operations dashboard to update automatically whenever a preparer moves a card in SuiteDash.",
+          "impact": "Eliminates manual demo data updates and enables live operations monitoring."
+        },
+        {
+          "id": "IMP-API-02",
+          "title": "SuiteDash Webhook Listener for E-Sign & Stage Changes",
+          "description": "Configure SuiteDash Webhooks (under Integrations > Webhooks) to emit payload events on `deal.stage_changed` and `form.submitted`. When a client signs Form 8879 or submits the Intake form, the dashboard can display real-time push notifications without page reloads.",
+          "impact": "Zero latency between front-desk reception, preparer pipeline, and client portal."
+        }
+      ]
+    },
+    {
+      "category": "2. Client Portal & Filing Cabinet UX",
+      "priority": "HIGH",
+      "recommendations": [
+        {
+          "id": "IMP-PORTAL-01",
+          "title": "Direct File Upload into Folder 01 via SuiteDash Secure Files API",
+          "description": "Connect the portal drag-and-drop zone directly to the SuiteDash File Upload endpoint targeted at `Tax Year Filing Cabinet > 01 Client Provided Docs`. Files dropped by clients will instantly appear in the assigned tax preparer's project workspace.",
+          "impact": "Streamlines document collection and eliminates email attachment bottlenecks."
+        },
+        {
+          "id": "IMP-PORTAL-02",
+          "title": "Embedded E-Sign Authorization with PDF Preview",
+          "description": "Upgrade the Form 8879 signature modal in the portal to display a real-time rendered SVG/PDF preview of Form 8879 populated with the client's name, SSN/ITIN (masked), and tax refund/due amount prior to capturing their digital signature.",
+          "impact": "Increases client confidence and satisfies IRS electronic signature recordkeeping requirements."
+        },
+        {
+          "id": "IMP-PORTAL-03",
+          "title": "Tax Organizer Progressive Checklist with Auto-Save",
+          "description": "Replace the static readiness meter with an interactive multi-step questionnaire that saves draft progress to SuiteDash custom fields as the client fills out foreign bank details, residency dates, and spouse information.",
+          "impact": "Reduces incomplete intake submissions and client dropoff."
+        }
+      ]
+    },
+    {
+      "category": "3. Reception & Operations Workflow",
+      "priority": "MEDIUM",
+      "recommendations": [
+        {
+          "id": "IMP-REC-01",
+          "title": "One-Click WhatsApp / LINE Check-In Notification to Advisors",
+          "description": "When reception clicks 'Admit to Room' or 'Check In Client', trigger a brief automated message to the assigned advisor's LINE/Slack/WhatsApp (e.g. 'Gerard Flanagan is waiting in Meeting Room 2').",
+          "impact": "Reduces client wait times in the Bangkok headquarters lobby."
+        },
+        {
+          "id": "IMP-REC-02",
+          "title": "Dynamic Thai Tax TIN & Passport Scanner OCR Integration",
+          "description": "Add an instant OCR preview in the reception intake console that extracts Thai TIN numbers, passport expiration dates, and full legal names from uploaded images and pre-fills SuiteDash Custom Fields.",
+          "impact": "Cuts manual data entry time by over 70% during walk-in visits."
+        }
+      ]
+    },
+    {
+      "category": "4. Architecture & UI/UX Unification",
+      "priority": "MEDIUM",
+      "recommendations": [
+        {
+          "id": "IMP-UI-01",
+          "title": "Unified Scheme Switcher (Scheme 1 Claret vs Scheme 2 Navy/Crimson)",
+          "description": "Consolidate Scheme 1 and Scheme 2 into a single CSS custom property engine (`data-theme='scheme1' | 'scheme2'`), enabling seamless instant switching without maintaining duplicate HTML template files.",
+          "impact": "Simplifies maintenance, improves codebase modularity, and ensures consistent feature parity."
+        },
+        {
+          "id": "IMP-UI-02",
+          "title": "Mobile PWA Manifest & Responsive Touch Gestures",
+          "description": "Add a `manifest.json` and service worker to allow staff in the Bangkok office and remote preparers to install the dashboard directly onto iPads/smartphones with offline support and swipe-to-advance Kanban cards.",
+          "impact": "Enables seamless tablet use by reception and advisors during in-person consultations."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,720 @@
+{
+  "firm_name": "American International Tax Advisers (AIT)",
+  "target_crm": "SuiteDash",
+  "circles": [
+    {
+      "circle_name": "Circle: Tax Management & Reviewers",
+      "description": "Tax Manager Chetan Nama, Sr. US Tax Manager Mattias, and Senior Tax Specialists.",
+      "members": [
+        {
+          "name": "Chetan Nama",
+          "email": "Chetan@aitaxadvisers.com",
+          "preparer_code": "Chetan",
+          "primary_role": "Tax Manager / Supervisor & Technical Reviewer",
+          "department": "Tax Management",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Thomas C.",
+          "suitedash_circle": "Circle: Tax Management & Reviewers",
+          "suitedash_tags": [
+            "Tax-Manager",
+            "Supervisor",
+            "Technical-Reviewer",
+            "Prep-Chetan"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Top Tax Manager, Supervisor, and Technical Reviewer."
+        },
+        {
+          "name": "Mattias Ludwig Rattelmeier",
+          "email": "mattias@aitaxadvisers.com",
+          "preparer_code": "Mattias",
+          "primary_role": "Senior US Tax Manager",
+          "department": "Tax Management",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Chetan Nama",
+          "suitedash_circle": "Circle: Tax Management & Reviewers",
+          "suitedash_tags": [
+            "Sr-Tax-Manager",
+            "US-Tax-Specialist",
+            "Prep-Mattias"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Senior US Tax Manager, reporting directly to Chetan Nama."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Client Management",
+      "description": "Client Manager Sudaduang (Noi) overseeing client accounts and preparation teams (including Ham).",
+      "members": [
+        {
+          "name": "Sudaduang (Noi)",
+          "email": "noi@aitaxadvisers.com",
+          "preparer_code": "Noi",
+          "primary_role": "Client Manager",
+          "department": "Client Management",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Executive Partners",
+          "suitedash_circle": "Circle: Client Management",
+          "suitedash_tags": [
+            "Client-Manager",
+            "Production-Lead",
+            "Prep-Noi"
+          ],
+          "suitedash_category": "Client Management & Production",
+          "notes": "Client Manager overseeing tax client accounts and preparation teams."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Tax Services",
+      "description": "Active tax preparers handling US, expat, and international tax return preparation.",
+      "members": [
+        {
+          "name": "Onanong K. (Ting)",
+          "email": "Ting@aitaxadvisers.com",
+          "preparer_code": "Ting",
+          "primary_role": "Senior Tax Specialist / Reviewer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Mattias / Chetan",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Senior-Tax",
+            "Reviewer",
+            "Prep-Ting"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Senior Tax Specialist and Reviewer."
+        },
+        {
+          "name": "Nilesh Shrestha",
+          "email": "nilesh@aitaxadvisers.com",
+          "preparer_code": "Nilesh",
+          "primary_role": "Senior Tax Specialist",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Mattias / Chetan",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Senior-Tax",
+            "Prep-Nilesh"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Senior Tax Specialist."
+        },
+        {
+          "name": "Asa Mizoi",
+          "email": "asa@aitaxadvisers.com",
+          "preparer_code": "Asa",
+          "primary_role": "Senior Tax Specialist",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Mattias / Chetan",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Senior-Tax",
+            "Expat-Specialist",
+            "Prep-Asa"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Senior Tax Specialist."
+        },
+        {
+          "name": "Warodom Buathong (Ham)",
+          "email": "Ham@aitaxadvisers.com",
+          "preparer_code": "Ham",
+          "primary_role": "Tax Preparer & Reviewer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Sudaduang (Noi)",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Tax-Preparer",
+            "Reviewer",
+            "Prep-Ham"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Tax Preparer & Reviewer, directly reporting to Client Manager Noi."
+        },
+        {
+          "name": "Napakan Boonmak (Jang)",
+          "email": "jang@aitaxadvisers.com",
+          "preparer_code": "Jang",
+          "primary_role": "Tax Preparer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Tax Management",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Tax-Prep",
+            "Prep-Jang"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Tax Preparer handling 1040, FBAR, and state returns."
+        },
+        {
+          "name": "Supranee Pojnavaropas (Fon)",
+          "email": "Fon@aitaxadvisers.com",
+          "preparer_code": "Fon",
+          "primary_role": "Tax Preparer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Tax Management",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Tax-Prep",
+            "Prep-Fon"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Tax Preparer."
+        },
+        {
+          "name": "thaweesak (Hard)",
+          "email": "hard@aitaxadvisers.com",
+          "preparer_code": "Hard",
+          "primary_role": "Tax Preparer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Tax Management",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Tax-Prep",
+            "Prep-Hard"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Tax Preparer."
+        },
+        {
+          "name": "Arnan Laoharanoo (Ling)",
+          "email": "Ling@aitaxadvisers.com",
+          "preparer_code": "Ling",
+          "primary_role": "Tax Preparer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Tax Management",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Tax-Prep",
+            "Prep-Ling"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Tax Preparer."
+        },
+        {
+          "name": "Horatius Williams",
+          "email": "horatius@aitaxadvisers.com",
+          "preparer_code": "Horatius",
+          "primary_role": "US Tax Preparer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "Vietnam",
+          "reporting_to": "Tax Management",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "US-Tax-Prep",
+            "Vietnam-Office",
+            "Prep-Horatius"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "US Tax Preparer based in Vietnam."
+        },
+        {
+          "name": "Sunny",
+          "email": "sunny@aitaxadvises.com",
+          "preparer_code": "Sunny",
+          "primary_role": "Tax Preparer",
+          "department": "Tax Services",
+          "status": "Active",
+          "location": "New Zealand",
+          "reporting_to": "Tax Management",
+          "suitedash_circle": "Circle: Tax Services",
+          "suitedash_tags": [
+            "Tax-Prep",
+            "NZ-Office",
+            "Prep-Sunny"
+          ],
+          "suitedash_category": "Tax Services (US & International)",
+          "notes": "Tax Preparer based in New Zealand."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Legal & Tax Advisory",
+      "description": "ChaCha providing Thai legal & tax advisory (advisory only, no tax prep).",
+      "members": [
+        {
+          "name": "patcha (ChaCha)",
+          "email": "chacha@aitaxadvisers.com",
+          "preparer_code": "Chacha",
+          "primary_role": "Thai Legal & Thai Tax Advisor",
+          "department": "Legal & Advisory",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Executive Management",
+          "suitedash_circle": "Circle: Legal & Tax Advisory",
+          "suitedash_tags": [
+            "Thai-Legal",
+            "Thai-Tax-Advisor",
+            "No-Prep",
+            "Prep-Chacha"
+          ],
+          "suitedash_category": "Legal & Specialty Tax Advisory",
+          "notes": "Thai Legal & Thai Tax Advisor (advisory & legal only, no tax prep)."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Accounting & Finance",
+      "description": "Sr. Accounting Manager Lek, Gate (Billing/Accounting), Kaew (Accounting), Jade, and Noy.",
+      "members": [
+        {
+          "name": "Napaschol (Lek)",
+          "email": "lek@aitaxadvisers.com",
+          "preparer_code": "Lek",
+          "primary_role": "Senior Accounting Manager",
+          "department": "Accounting & Finance",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Executive Management",
+          "suitedash_circle": "Circle: Accounting & Finance",
+          "suitedash_tags": [
+            "Sr-Accounting-Manager",
+            "Accounting-Lead"
+          ],
+          "suitedash_category": "Accounting, Invoicing & Financial Operations",
+          "notes": "Senior Accounting Manager leading the accounting department."
+        },
+        {
+          "name": "Gate",
+          "email": "gate@aitaxadvisers.com",
+          "preparer_code": "Gate",
+          "primary_role": "Billing & Accounting Specialist",
+          "department": "Accounting & Finance",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Napaschol (Lek)",
+          "suitedash_circle": "Circle: Accounting & Finance",
+          "suitedash_tags": [
+            "Billing",
+            "Accounting-Staff"
+          ],
+          "suitedash_category": "Accounting, Invoicing & Financial Operations",
+          "notes": "Billing and Accounting Specialist (not receptionist)."
+        },
+        {
+          "name": "Kaew",
+          "email": "kaew@aitaxadvisers.com",
+          "preparer_code": "Kaew",
+          "primary_role": "Accounting Staff",
+          "department": "Accounting & Finance",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Napaschol (Lek)",
+          "suitedash_circle": "Circle: Accounting & Finance",
+          "suitedash_tags": [
+            "Accounting-Staff"
+          ],
+          "suitedash_category": "Accounting, Invoicing & Financial Operations",
+          "notes": "Accounting Staff member."
+        },
+        {
+          "name": "Sukanya Chansamut (Jade)",
+          "email": "Jade@aitaxadvisers.com",
+          "preparer_code": "Jade",
+          "primary_role": "Accounting Assistant",
+          "department": "Accounting & Finance",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Napaschol (Lek)",
+          "suitedash_circle": "Circle: Accounting & Finance",
+          "suitedash_tags": [
+            "Accounting-Assistant"
+          ],
+          "suitedash_category": "Accounting, Invoicing & Financial Operations",
+          "notes": "Accounting assistant."
+        },
+        {
+          "name": "Noy",
+          "email": "Noy@aitaxadvisers.com",
+          "preparer_code": "Noy",
+          "primary_role": "Accounting Assistant",
+          "department": "Accounting & Finance",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Napaschol (Lek)",
+          "suitedash_circle": "Circle: Accounting & Finance",
+          "suitedash_tags": [
+            "Accounting-Assistant"
+          ],
+          "suitedash_category": "Accounting, Invoicing & Financial Operations",
+          "notes": "Accounting assistant."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Front Office & Client Intake",
+      "description": "Front Office Manager Sumitr (Ben), Fone (Support Lead), Mameow, and Kong.",
+      "members": [
+        {
+          "name": "Sumitr (Ben)",
+          "email": "ben@aitaxadvisers.com",
+          "preparer_code": "Ben",
+          "primary_role": "Front Office Manager",
+          "department": "Front Office & Intake",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Executive Management",
+          "suitedash_circle": "Circle: Front Office & Client Intake",
+          "suitedash_tags": [
+            "Front-Office-Manager",
+            "Client-Intake-Head"
+          ],
+          "suitedash_category": "Client Intake & Reception Services",
+          "notes": "Front Office Manager leading reception and client intake."
+        },
+        {
+          "name": "Fone",
+          "email": "Fone@Aitaxadvisers.com",
+          "preparer_code": "Fone",
+          "primary_role": "Front Office & Customer Support Lead",
+          "department": "Front Office & Intake",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Sumitr (Ben)",
+          "suitedash_circle": "Circle: Front Office & Client Intake",
+          "suitedash_tags": [
+            "Front-Office",
+            "Customer-Support"
+          ],
+          "suitedash_category": "Client Intake & Reception Services",
+          "notes": "Front office and customer support team lead."
+        },
+        {
+          "name": "Mameow",
+          "email": "mameow@aitaxadvisers.com",
+          "preparer_code": "Mameow",
+          "primary_role": "Front Office & Client Intake Coordinator",
+          "department": "Front Office & Intake",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Sumitr (Ben)",
+          "suitedash_circle": "Circle: Front Office & Client Intake",
+          "suitedash_tags": [
+            "Front-Office",
+            "Client-Intake"
+          ],
+          "suitedash_category": "Client Intake & Reception Services",
+          "notes": "Front office intake coordinator."
+        },
+        {
+          "name": "Kongkhaphan Samutthananont",
+          "email": "Kong@aitaxadvisers.com",
+          "preparer_code": "Kong",
+          "primary_role": "Front Office Assistant",
+          "department": "Front Office & Intake",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Sumitr (Ben)",
+          "suitedash_circle": "Circle: Front Office & Client Intake",
+          "suitedash_tags": [
+            "Front-Office"
+          ],
+          "suitedash_category": "Client Intake & Reception Services",
+          "notes": "Front office assistant."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Human Resources",
+      "description": "HR Manager Nathamon (HR only; no tax/accounting).",
+      "members": [
+        {
+          "name": "Nathamon Yongsuwankul",
+          "email": "Nathamon@aitaxadvisers.com",
+          "preparer_code": "Nathamon",
+          "primary_role": "HR Manager",
+          "department": "Human Resources",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Executive Management",
+          "suitedash_circle": "Circle: Human Resources",
+          "suitedash_tags": [
+            "HR-Manager",
+            "Human-Resources"
+          ],
+          "suitedash_category": "Human Resources & Internal Admin",
+          "notes": "HR Manager (HR only; no tax, no accounting)."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Executive Office",
+      "description": "Managing Partners (Thomas, Robert, Chris) and Personal Assistant Za.",
+      "members": [
+        {
+          "name": "Thomas C.",
+          "email": "Thomas@aitaxadvisers.com",
+          "preparer_code": "Thomas",
+          "primary_role": "Managing Partner / Founder & Final Technical Reviewer",
+          "department": "Executive Management",
+          "status": "Active",
+          "location": "Global",
+          "reporting_to": "N/A (Founder/Managing Partner)",
+          "suitedash_circle": "Circle: Executive & Partners",
+          "suitedash_tags": [
+            "Executive",
+            "Managing-Partner",
+            "Final-Reviewer"
+          ],
+          "suitedash_category": "Firm Management & Executive Operations",
+          "notes": "Firm founder and final technical review sign-off."
+        },
+        {
+          "name": "Robert John Bluett",
+          "email": "Robert@aitaxadvisers.com",
+          "preparer_code": "Robert",
+          "primary_role": "Executive Director / Managing Partner",
+          "department": "Executive Management",
+          "status": "Active",
+          "location": "Global",
+          "reporting_to": "N/A (Managing Partner)",
+          "suitedash_circle": "Circle: Executive & Partners",
+          "suitedash_tags": [
+            "Executive",
+            "Managing-Director"
+          ],
+          "suitedash_category": "Firm Management & Executive Operations",
+          "notes": "Executive leadership and strategic management."
+        },
+        {
+          "name": "Chris Mc Laughlin",
+          "email": "Chris@aitaxadvisers.com",
+          "preparer_code": "Chris",
+          "primary_role": "Executive Partner",
+          "department": "Executive Management",
+          "status": "Active",
+          "location": "Global",
+          "reporting_to": "N/A (Executive Partner)",
+          "suitedash_circle": "Circle: Executive & Partners",
+          "suitedash_tags": [
+            "Executive",
+            "Partner"
+          ],
+          "suitedash_category": "Firm Management & Executive Operations",
+          "notes": "Partner leadership and client relations."
+        },
+        {
+          "name": "za",
+          "email": "za@aitaxadvisers.com",
+          "preparer_code": "Za",
+          "primary_role": "Personal Assistant to Thomas",
+          "department": "Executive Office",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Thomas C.",
+          "suitedash_circle": "Circle: Executive Office",
+          "suitedash_tags": [
+            "Personal-Assistant",
+            "Executive-Assistant",
+            "Thomas-PA"
+          ],
+          "suitedash_category": "Firm Management & Executive Operations",
+          "notes": "Personal Assistant to Managing Partner Thomas C."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: IT & System Admin",
+      "description": "System Admin team (3 people: Tk, Gig, and Ben).",
+      "members": [
+        {
+          "name": "AITAX Admin (Tk, Gig, Ben)",
+          "email": "admin@aitaxadvisers.com",
+          "preparer_code": "Admin",
+          "primary_role": "IT & System Administration Team (3 People: Tk, Gig, Ben)",
+          "department": "IT & System Administration",
+          "status": "Active",
+          "location": "Thailand",
+          "reporting_to": "Executive Management",
+          "suitedash_circle": "Circle: IT & System Admin",
+          "suitedash_tags": [
+            "System-Admin",
+            "IT-Team",
+            "Tk-Gig-Ben"
+          ],
+          "suitedash_category": "Firm Management & Executive Operations",
+          "notes": "Shared IT/System Admin account comprising 3 team members: Tk, Gig, and Ben."
+        }
+      ]
+    },
+    {
+      "circle_name": "Circle: Archived / Former Staff",
+      "description": "Departed staff members (June, Thip, Pa).",
+      "members": [
+        {
+          "name": "Sunisa Chaweein (June)",
+          "email": "June@aitaxadvisers.com",
+          "preparer_code": "June",
+          "primary_role": "Former Billing Coordinator (Departed)",
+          "department": "Former Staff",
+          "status": "Inactive / Departed",
+          "location": "N/A",
+          "reporting_to": "N/A",
+          "suitedash_circle": "Circle: Archived / Former Staff",
+          "suitedash_tags": [
+            "Inactive",
+            "Former-Staff"
+          ],
+          "suitedash_category": "Archived Staff",
+          "notes": "No longer with the firm."
+        },
+        {
+          "name": "Thip",
+          "email": "thip@aitaxadvisers.com",
+          "preparer_code": "Thip",
+          "primary_role": "Former Finance Assistant (Departed)",
+          "department": "Former Staff",
+          "status": "Inactive / Departed",
+          "location": "N/A",
+          "reporting_to": "N/A",
+          "suitedash_circle": "Circle: Archived / Former Staff",
+          "suitedash_tags": [
+            "Inactive",
+            "Former-Staff"
+          ],
+          "suitedash_category": "Archived Staff",
+          "notes": "No longer with the firm."
+        },
+        {
+          "name": "Pawina koeri (Pa)",
+          "email": "pa@aitaxadvisers.com",
+          "preparer_code": "Pa",
+          "primary_role": "Former Client Intake Assistant (Departed)",
+          "department": "Former Staff",
+          "status": "Inactive / Departed",
+          "location": "N/A",
+          "reporting_to": "N/A",
+          "suitedash_circle": "Circle: Archived / Former Staff",
+          "suitedash_tags": [
+            "Inactive",
+            "Former-Staff"
+          ],
+          "suitedash_category": "Archived Staff",
+          "notes": "No longer with the firm."
+        }
+      ]
+    }
+  ],
+  "pipelines": [
+    {
+      "pipeline_name": "Sales & Client Onboarding Pipeline (Deals)",
+      "purpose": "Managed by Front Office Manager Ben and HR/Admin teams for lead intake, quotations, and ELs.",
+      "stages": [
+        {
+          "stage_number": 1,
+          "stage_name": "Lead / New Inquiry",
+          "description": "Received by Front Office Team (Ben, Fone, Mameow, Kong)."
+        },
+        {
+          "stage_number": 2,
+          "stage_name": "Initial Intake & Docs",
+          "description": "Client questionnaire and prior tax docs collected."
+        },
+        {
+          "stage_number": 3,
+          "stage_name": "Quotation Prepared",
+          "description": "Fee quote calculated ($600–$6,000+)."
+        },
+        {
+          "stage_number": 4,
+          "stage_name": "Engagement Letter (EL) Sent",
+          "description": "EL created by Za (Thomas' PA) and sent for e-sign."
+        },
+        {
+          "stage_number": 5,
+          "stage_name": "Deal Won (EL Signed)",
+          "description": "Client signs EL; routes to Client Manager Noi for assignment."
+        },
+        {
+          "stage_number": 6,
+          "stage_name": "Deal Lost / Declined",
+          "description": "Client did not proceed."
+        }
+      ]
+    },
+    {
+      "pipeline_name": "Tax Return Production Pipeline (Fulfillment)",
+      "purpose": "Managed by Client Manager Noi, Tax Manager Chetan, Sr. Manager Mattias, and Preparers.",
+      "stages": [
+        {
+          "stage_number": 1,
+          "stage_name": "1st Invoice / Deposit",
+          "description": "Issued by Sr Accounting Manager Lek & Gate (Billing)."
+        },
+        {
+          "stage_number": 2,
+          "stage_name": "Awaiting Client Documents",
+          "description": "Pending client tax documents/questionnaire."
+        },
+        {
+          "stage_number": 3,
+          "stage_name": "Tax Preparation",
+          "description": "Drafted by Tax Preparers (Ham, Jang, Fon, Hard, Ling, Horatius [VN], Sunny [NZ])."
+        },
+        {
+          "stage_number": 4,
+          "stage_name": "Senior / Manager Review",
+          "description": "Reviewed by Ting, Nilesh, Asa, Sr Manager Mattias, or Tax Manager Chetan."
+        },
+        {
+          "stage_number": 5,
+          "stage_name": "Client Review & Sign-Off (8879)",
+          "description": "Draft sent to client for Form 8879 / 114a signature."
+        },
+        {
+          "stage_number": 6,
+          "stage_name": "Final Invoice & Payment",
+          "description": "Issued by Billing Specialist Gate prior to filing."
+        },
+        {
+          "stage_number": 7,
+          "stage_name": "Return E-Filed / Sent to IRS",
+          "description": "Completed & e-filed by Hard / Tax Team; confirmation archived."
+        }
+      ]
+    },
+    {
+      "pipeline_name": "Thai Legal & Tax Advisory Pipeline",
+      "purpose": "Managed by ChaCha for Thai tax advice and legal consultations (no tax prep).",
+      "stages": [
+        {
+          "stage_number": 1,
+          "stage_name": "Legal / Advisory Request",
+          "description": "Thai tax advice or legal inquiry received."
+        },
+        {
+          "stage_number": 2,
+          "stage_name": "Advisory Review (ChaCha)",
+          "description": "ChaCha reviews Thai tax regulations & legal structure."
+        },
+        {
+          "stage_number": 3,
+          "stage_name": "Legal Consultation Provided",
+          "description": "Written advice or consultation delivered to client."
+        }
+      ]
+    }
+  ]
+}

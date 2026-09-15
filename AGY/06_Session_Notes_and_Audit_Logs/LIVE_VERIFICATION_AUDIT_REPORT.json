@@ -1,0 +1,278 @@
+{
+  "timestamp": "2026-09-15T18:50:44.238Z",
+  "authAccount": "mattias+admin@rattelmeier.com",
+  "results": [
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"Tax Filing Status\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: b59a9f09-c51b-42e7-9f40-230f5bcffe49 (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"Last Return Filed\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: 10fd21a3-5e5c-48c1-878a-7fd95880f6b7 (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"Referral Source\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: 262a76f4-9988-4d26-b3e6-28cb293deafe (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"Preferred Language\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: ac9cf31d-6382-4118-b83e-04413b0f230a (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"US Taxpayer\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: 55af3aeb-b269-473a-9826-1b2ef524b5b8 (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"Thai Taxpayer\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: eea85c37-5382-4638-94c5-cc7a8cdd0836 (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "REST API",
+      "item": "Custom Field: \"Spouse Full Name\"",
+      "expected": "Present in live schema",
+      "actual": "Found UUID: 4b3c9fb8-c690-449e-b0a5-d9a774d5e819 (Type: string)",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Custom Fields",
+      "item": "Category: \"Tax Client\"",
+      "expected": "Active in Categories Modal",
+      "actual": "Category text missing",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Custom Fields",
+      "item": "Category: \"Corporate Client\"",
+      "expected": "Active in Categories Modal",
+      "actual": "Category text missing",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Custom Fields",
+      "item": "Category: \"Prospect\"",
+      "expected": "Active in Categories Modal",
+      "actual": "Category text missing",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Circles",
+      "item": "Permission Circle: \"Staff - Reception\"",
+      "expected": "Active Circle Card rendered",
+      "actual": "Found card in DOM: \"Staff - Reception\"",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Circles",
+      "item": "Permission Circle: \"Staff - Tax Preparer\"",
+      "expected": "Active Circle Card rendered",
+      "actual": "Found card in DOM: \"Staff - Tax Preparer\"",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Circles",
+      "item": "Permission Circle: \"Staff - Manager\"",
+      "expected": "Active Circle Card rendered",
+      "actual": "Found card in DOM: \"Staff - Manager\"",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Circles",
+      "item": "Permission Circle: \"All Active Clients\"",
+      "expected": "Active Circle Card rendered",
+      "actual": "Found card in DOM: \"All Active Clients\"",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Circles",
+      "item": "Permission Circle: \"Prospects\"",
+      "expected": "Active Circle Card rendered",
+      "actual": "Found card in DOM: \"Prospects\"",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Branding CSS",
+      "item": "Global Theme Custom CSS Slot",
+      "expected": "Contains AITA custom typography & KPI skinning rules",
+      "actual": "Verified active in CodeMirror editor",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Dashboards",
+      "item": "Reception Operations Dashboard",
+      "expected": "Configured in Dashboard Admin",
+      "actual": "Verified active dashboard entry in table",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Forms",
+      "item": "Reception - Client Info Update Form",
+      "expected": "Active in Forms Manager",
+      "actual": "Found verified form in list",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "CRM Follow-Up",
+      "item": "Category: \"Call Log\"",
+      "expected": "Present in Dropdowns Admin",
+      "actual": "Dropdown option not found",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "CRM Follow-Up",
+      "item": "Category: \"Walk-In Visit\"",
+      "expected": "Present in Dropdowns Admin",
+      "actual": "Dropdown option not found",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "CRM Follow-Up",
+      "item": "Category: \"Email Correspondence\"",
+      "expected": "Present in Dropdowns Admin",
+      "actual": "Dropdown option not found",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Pipelines",
+      "item": "Pipeline: \"US Tax Returns (1040)\" (ID: 95885)",
+      "expected": "All 8 Canonical Stages rendered",
+      "actual": "Only 5/8 stages found in DOM",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Pipelines",
+      "item": "Pipeline: \"Thai Tax Returns\" (ID: 95886)",
+      "expected": "All 8 Canonical Stages rendered",
+      "actual": "Only 5/8 stages found in DOM",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Pipelines",
+      "item": "Pipeline: \"Corporate / Entity Returns\" (ID: 95887)",
+      "expected": "All 8 Canonical Stages rendered",
+      "actual": "Only 5/8 stages found in DOM",
+      "status": "FAIL",
+      "error": ""
+    },
+    {
+      "scope": "Filing Cabinet",
+      "item": "Tax Year Filing Cabinet (5-Tier Profile)",
+      "expected": "Active Project Folder Generator",
+      "actual": "Found verified folder generator profile",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Task Templates",
+      "item": "Prepare Tax Template (ID: 22499)",
+      "expected": "Phased Task Template Active",
+      "actual": "Found \"Prepare Tax\" template in Project Templates Admin",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Project Generators",
+      "item": "Generator: \"1040 Individual Tax Return Generator\"",
+      "expected": "Active in Project Profiles Admin",
+      "actual": "Verified generator pattern: 1040 Individual Tax Return Generator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Project Generators",
+      "item": "Generator: \"Thai Tax Return Generator\"",
+      "expected": "Active in Project Profiles Admin",
+      "actual": "Verified generator pattern: Thai Tax Return Generator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Project Generators",
+      "item": "Generator: \"Corporate Return Generator\"",
+      "expected": "Active in Project Profiles Admin",
+      "actual": "Verified generator pattern: Corporate Return Generator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Deal Generators",
+      "item": "Generator: \"US 1040 Deal Generator\"",
+      "expected": "Active in Deal Generators Admin",
+      "actual": "Verified linked deal generator: US 1040 Deal Generator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Deal Generators",
+      "item": "Generator: \"Thai Tax Return Deal Generator\"",
+      "expected": "Active in Deal Generators Admin",
+      "actual": "Verified linked deal generator: Thai Tax Return Deal Generator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Deal Generators",
+      "item": "Generator: \"Corporate Return Deal Generator\"",
+      "expected": "Active in Deal Generators Admin",
+      "actual": "Verified linked deal generator: Corporate Return Deal Generator",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Mobile QA (390px)",
+      "item": "Mobile Viewport Emulation",
+      "expected": "innerWidth = 390px without scaling bugs",
+      "actual": "Verified width = 390px",
+      "status": "PASS",
+      "details": ""
+    },
+    {
+      "scope": "Tablet QA (768px)",
+      "item": "Tablet Viewport Emulation",
+      "expected": "innerWidth = 768px",
+      "actual": "Verified width = 768px",
+      "status": "PASS",
+      "details": ""
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AITA — Concierge & Hospitality Portal (V2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --aitax-blue: #003366;
+      --aitax-blue-dark: #001f3f;
+      --aitax-red: #d9534f;
+      --aitax-maroon: #7A2021;
+      --aitax-gold: #ffc107;
+      --aitax-bg: #f8fafc;
+      --aitax-card: #ffffff;
+      --aitax-text: #0f172a;
+      --aitax-muted: #64748b;
+      --aitax-border: #e2e8f0;
+      --aitax-success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', 'Prompt', sans-serif;
+      background: var(--aitax-bg);
+      color: var(--aitax-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Hospitality Ribbon */
+    .hospitality-header {
+      background: linear-gradient(135deg, var(--aitax-blue-dark) 0%, var(--aitax-blue) 100%);
+      color: white;
+      padding: 18px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid var(--aitax-red);
+      box-shadow: 0 4px 20px rgba(0,33,68,0.25);
+    }
+    .brand-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title i { color: var(--aitax-gold); }
+    .brand-subtitle {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      font-family: 'Prompt', sans-serif;
+    }
+
+    .concierge-widgets {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .widget-pill {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .widget-pill i { color: var(--aitax-gold); }
+
+    /* Layout Grid */
+    .portal-body {
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      flex: 1;
+    }
+
+    /* Client Cards Stream */
+    .stream-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .stream-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--aitax-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .stream-search {
+      display: flex;
+      gap: 10px;
+    }
+    .stream-search input {
+      padding: 8px 16px;
+      border: 1px solid var(--aitax-border);
+      border-radius: 20px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      width: 260px;
+      outline: none;
+    }
+    .stream-search input:focus { border-color: var(--aitax-blue); }
+
+    .client-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .client-card {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--aitax-border);
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .client-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,51,102,0.1);
+      border-color: var(--aitax-blue);
+    }
+    .card-top-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .vip-tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 10px;
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .corp-tag { background: #e0e7ff; color: #3730a3; }
+    .lang-flag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--aitax-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .client-profile-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--aitax-blue) 0%, var(--aitax-maroon) 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .profile-info h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--aitax-blue);
+    }
+    .profile-info p {
+      font-size: 0.8rem;
+      color: var(--aitax-muted);
+      margin-top: 2px;
+    }
+
+    .stage-pill {
+      background: #f1f5f9;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+    .stage-pill span { font-weight: 700; color: var(--aitax-maroon); }
+
+    .card-actions-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--aitax-border);
+    }
+    .action-btn {
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--aitax-border);
+      background: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: 0.2s;
+    }
+    .btn-notify { background: #25D366; color: white; border: none; }
+    .btn-notify:hover { background: #1eb857; }
+    .btn-docket { background: var(--aitax-blue); color: white; border: none; }
+    .btn-docket:hover { background: var(--aitax-blue-dark); }
+
+    /* Right Sidebar: Vault Pickups */
+    .vault-panel {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--aitax-border);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .vault-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--aitax-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--aitax-border);
+    }
+    .vault-title i { color: var(--aitax-maroon); }
+
+    .pickup-item {
+      padding: 12px 14px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid var(--aitax-border);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .pickup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--aitax-blue);
+    }
+    .pickup-meta {
+      font-size: 0.75rem;
+      color: var(--aitax-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    .pickup-btn {
+      margin-top: 4px;
+      padding: 6px;
+      background: var(--aitax-maroon);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    @media (max-width: 1024px) {
+      .portal-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Hospitality Header -->
+  <header class="hospitality-header">
+    <div class="brand-section">
+      <div class="brand-title">
+        <i class="fa-solid fa-hotel"></i>
+        <span>AMERICAN INTERNATIONAL TAX ADVISERS</span>
+      </div>
+      <div class="brand-subtitle">
+        <span>Bangkok Executive Front Desk · การต้อนรับและบริการลูกค้า</span>
+      </div>
+    </div>
+    <div class="concierge-widgets">
+      <div class="widget-pill">
+        <i class="fa-solid fa-sun"></i> <span>Bangkok 31°C · Sunny</span>
+      </div>
+      <div class="widget-pill">
+        <i class="fa-solid fa-dollar-sign"></i> <span>USD/THB: 35.40 ฿</span>
+      </div>
+      <div class="widget-pill" style="background: var(--aitax-maroon); cursor: pointer;" onclick="alert('Notary Seal Active at Counter 1')">
+        <i class="fa-solid fa-stamp"></i> <span>Notary Duty: On Site</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="portal-body">
+    
+    <!-- Main Stream -->
+    <main>
+      <div class="stream-header">
+        <div class="stream-title">
+          <i class="fa-solid fa-id-badge"></i>
+          <span>Active Client Dossiers & Hospitality</span>
+        </div>
+        <div class="stream-search">
+          <input type="text" id="client-filter-input" placeholder="Search client name or advisor..." oninput="filterCards()">
+        </div>
+      </div>
+
+      <div class="client-cards-grid" id="cards-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </main>
+
+    <!-- Right Sidebar: Document Pickup Vault -->
+    <aside class="vault-panel">
+      <div class="vault-title">
+        <i class="fa-solid fa-folder-closed"></i>
+        <span>Ready for Client Pickup / E-Sign</span>
+      </div>
+
+      <div class="pickup-item">
+        <div class="pickup-header">
+          <span>Karl Axelsson</span>
+          <span class="vip-tag corp-tag">Corp 1120</span>
+        </div>
+        <div class="pickup-meta">
+          <span>Form 8879-CORP Ready</span>
+          <span style="color: var(--aitax-red); font-weight:700;">Signed Proof</span>
+        </div>
+        <button class="pickup-btn" onclick="alert('Document marked as Handed to Client.')"><i class="fa-solid fa-handshake me-1"></i> Handover Document</button>
+      </div>
+
+      <div class="pickup-item">
+        <div class="pickup-header">
+          <span>Peter Woods</span>
+          <span class="vip-tag">Dual Return</span>
+        </div>
+        <div class="pickup-meta">
+          <span>Thai TIN Certificate #094-***</span>
+          <span style="color: var(--aitax-success); font-weight:700;">Certified</span>
+        </div>
+        <button class="pickup-btn" onclick="alert('TIN Certificate delivered.')"><i class="fa-solid fa-handshake me-1"></i> Handover Document</button>
+      </div>
+
+      <div class="pickup-item">
+        <div class="pickup-header">
+          <span>Aaron Yip</span>
+          <span class="vip-tag">SFOP Package</span>
+        </div>
+        <div class="pickup-meta">
+          <span>Notary Affidavit Pack</span>
+          <span style="color: #b45309; font-weight:700;">Awaiting Seal</span>
+        </div>
+        <button class="pickup-btn" style="background: var(--aitax-blue);" onclick="alert('Notary alerted.')"><i class="fa-solid fa-bell me-1"></i> Alert Notary</button>
+      </div>
+
+      <div style="margin-top: 10px; background: #f1f5f9; padding: 14px; border-radius: 8px; font-size: 0.8rem;">
+        <div style="font-weight: 700; color: var(--aitax-blue); margin-bottom: 4px;">
+          <i class="fa-solid fa-circle-info me-1"></i> Fast Reception Guidelines
+        </div>
+        <p style="color: var(--aitax-muted); line-height: 1.4;">
+          Ensure signed Form 8879 hardcopies are immediately scanned into <strong>04 Signed Forms 8879</strong> in SuiteDash before handing final binders to clients.
+        </p>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    const CLIENTS = [
+      { id: 1, name: "Gerard Flanagan", service: "US 1040 Expat", advisor: "Chetan Nama", tag: "VIP Client", tagClass: "vip-tag", lang: "EN", stage: "Chetan Review (70%)", progress: 70, phone: "+66 2 714 ****" },
+      { id: 2, name: "Dennis Manley", service: "US 1040 + FBAR", advisor: "Thomas Carden", tag: "US Expat", tagClass: "vip-tag", lang: "EN", stage: "Processing Return (50%)", progress: 50, phone: "+66 81 845 ****" },
+      { id: 3, name: "Emily Johnson", service: "US 1040 + FTC", advisor: "Chris Mc Laughlin", tag: "First Year", tagClass: "vip-tag", lang: "EN", stage: "Info Gathering (25%)", progress: 25, phone: "+66 89 231 ****" },
+      { id: 4, name: "Garrath Ford", service: "Thai PIT 91 Personal", advisor: "Sumitr Ruangwattanasakul", tag: "Thai PIT", tagClass: "vip-tag", lang: "EN / TH", stage: "Processing Return (50%)", progress: 50, phone: "+66 2 632 ****" },
+      { id: 5, name: "Karl Axelsson", service: "Corporate 1120-F", advisor: "Chetan Nama", tag: "Corporate", tagClass: "vip-tag corp-tag", lang: "EN / SV", stage: "Client Review (85%)", progress: 85, phone: "+66 84 990 ****" },
+      { id: 6, name: "Peter Woods", service: "Dual US & Thai Tax", advisor: "Asa Mizoi", tag: "High Net Worth", tagClass: "vip-tag", lang: "EN", stage: "Awaiting Payment (95%)", progress: 95, phone: "+66 87 112 ****" },
+      { id: 7, name: "Aaron Yip", service: "Streamlined SFOP", advisor: "Chetan Nama", tag: "SFOP Package", tagClass: "vip-tag corp-tag", lang: "EN / ZH", stage: "Intake / Quotation (10%)", progress: 10, phone: "+66 92 400 ****" }
+    ];
+
+    function renderCards(list = CLIENTS) {
+      const container = document.getElementById('cards-container');
+      container.innerHTML = '';
+      list.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'client-card';
+        const initials = c.name.split(' ').map(n => n[0]).join('');
+
+        card.innerHTML = `
+          <div>
+            <div class="card-top-strip">
+              <span class="${c.tagClass}">${c.tag}</span>
+              <span class="lang-flag"><i class="fa-solid fa-earth-americas"></i> ${c.lang}</span>
+            </div>
+            <div class="client-profile-row">
+              <div class="avatar">${initials}</div>
+              <div class="profile-info">
+                <h3>${c.name}</h3>
+                <p><i class="fa-solid fa-user-tie me-1"></i>${c.advisor} · ${c.service}</p>
+              </div>
+            </div>
+            <div class="stage-pill">
+              <span>${c.stage}</span>
+              <div style="font-weight: 800; color: var(--aitax-blue);">${c.progress}%</div>
+            </div>
+          </div>
+          <div class="card-actions-row">
+            <button class="action-btn btn-notify" onclick="sendWhatsApp('${c.name}')"><i class="fa-brands fa-whatsapp"></i> LINE / WA</button>
+            <button class="action-btn btn-docket" onclick="alert('Viewing SuiteDash Docket for ${c.name}')"><i class="fa-solid fa-folder-open"></i> SuiteDash</button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function filterCards() {
+      const q = document.getElementById('client-filter-input').value.toLowerCase();
+      const filtered = CLIENTS.filter(c => c.name.toLowerCase().includes(q) || c.advisor.toLowerCase().includes(q) || c.service.toLowerCase().includes(q));
+      renderCards(filtered);
+    }
+
+    function sendWhatsApp(name) {
+      alert(`[AITA Concierge Alert] Notification dispatched to Advisor & Reception Channel for ${name}`);
+    }
+
+    renderCards();
+  </script>
+</body>
+</html>

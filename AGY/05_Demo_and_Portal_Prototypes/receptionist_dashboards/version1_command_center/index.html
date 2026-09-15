@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AITA — Receptionist Command Center (V1)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --aitax-blue: #003366;
+      --aitax-blue-dark: #002244;
+      --aitax-red: #d9534f;
+      --aitax-maroon: #7A2021;
+      --aitax-gold: #ffc107;
+      --aitax-bg: #f4f6f9;
+      --aitax-card: #ffffff;
+      --aitax-text: #1e293b;
+      --aitax-muted: #64748b;
+      --aitax-border: #e2e8f0;
+      --aitax-success: #10b981;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', 'Prompt', sans-serif;
+      background-color: var(--aitax-bg);
+      color: var(--aitax-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar */
+    .top-header {
+      background-color: var(--aitax-blue);
+      color: #ffffff;
+      padding: 10px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      border-bottom: 3px solid var(--aitax-red);
+    }
+    .top-header .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+    .top-header .brand i { color: var(--aitax-gold); }
+    .top-header .meta-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .time-badge {
+      background: rgba(255,255,255,0.15);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .lang-toggle {
+      cursor: pointer;
+      font-weight: 700;
+      padding: 2px 8px;
+      background: var(--aitax-maroon);
+      border-radius: 4px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Main Container */
+    .app-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 24px;
+      padding: 24px;
+      flex: 1;
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--aitax-card);
+      border-radius: 8px;
+      border: 1px solid var(--aitax-border);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--aitax-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafbfc;
+    }
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--aitax-blue);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title i { color: var(--aitax-red); }
+
+    /* Left Sidebar: Queue */
+    .queue-list {
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow-y: auto;
+      max-height: calc(100vh - 280px);
+    }
+    .queue-item {
+      padding: 12px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--aitax-border);
+      background: #ffffff;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .queue-item:hover, .queue-item.active {
+      border-color: var(--aitax-blue);
+      box-shadow: 0 2px 8px rgba(0,51,102,0.12);
+      transform: translateY(-1px);
+    }
+    .queue-item.active {
+      border-left: 4px solid var(--aitax-red);
+      background: #f8fafc;
+    }
+    .queue-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .client-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--aitax-blue);
+    }
+    .badge {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-waiting { background: #fef3c7; color: #92400e; }
+    .badge-with-advisor { background: #dbeafe; color: #1e40af; }
+    .badge-completed { background: #d1fae5; color: #065f46; }
+
+    .queue-details-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--aitax-muted);
+    }
+    .advisor-assigned { font-weight: 600; color: var(--aitax-text); }
+
+    /* Action Bar in Left Column */
+    .quick-intake-btn {
+      margin: 12px;
+      padding: 12px;
+      background: var(--aitax-maroon);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: 0.2s;
+    }
+    .quick-intake-btn:hover {
+      background: #5c1819;
+      box-shadow: 0 4px 12px rgba(122,32,33,0.3);
+    }
+
+    /* Right Main Panel */
+    .main-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Search & Stats Bar */
+    .stats-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat-box {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      border: 1px solid var(--aitax-border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: rgba(0,51,102,0.08);
+      color: var(--aitax-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    .stat-box:nth-child(2) .stat-icon { background: rgba(217,83,79,0.1); color: var(--aitax-red); }
+    .stat-box:nth-child(3) .stat-icon { background: rgba(255,193,7,0.15); color: #b45309; }
+    .stat-box:nth-child(4) .stat-icon { background: rgba(16,185,129,0.1); color: var(--aitax-success); }
+    .stat-val { font-size: 1.4rem; font-weight: 800; color: var(--aitax-blue); }
+    .stat-lbl { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--aitax-muted); }
+
+    /* Client Profile Card */
+    .client-docket {
+      padding: 24px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--aitax-border);
+    }
+    .docket-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--aitax-border);
+      margin-bottom: 20px;
+    }
+    .docket-title h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--aitax-blue);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .docket-title p { font-size: 0.85rem; color: var(--aitax-muted); margin-top: 4px; }
+    
+    .status-select-btn {
+      padding: 8px 14px;
+      background: var(--aitax-blue);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    /* Grid Details */
+    .docket-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .grid-cell {
+      background: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--aitax-border);
+    }
+    .cell-lbl { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--aitax-muted); margin-bottom: 4px; }
+    .cell-val { font-size: 0.9rem; font-weight: 700; color: var(--aitax-text); }
+
+    /* 8-Stage Tracker Mini */
+    .pipeline-tracker {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 15px;
+      padding: 10px 0;
+    }
+    .stage-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+    .node-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .stage-node.active .node-dot { background: var(--aitax-red); box-shadow: 0 0 0 3px rgba(217,83,79,0.2); }
+    .stage-node.completed .node-dot { background: var(--aitax-blue); }
+    .stage-lbl { font-size: 0.65rem; font-weight: 700; text-align: center; color: var(--aitax-muted); }
+    .stage-node.active .stage-lbl { color: var(--aitax-red); }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-box {
+      background: white;
+      width: 520px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+    }
+    .modal-header {
+      background: var(--aitax-blue);
+      color: white;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+    }
+    .modal-body { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 4px; }
+    .form-group label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--aitax-muted); }
+    .form-group input, .form-group select {
+      padding: 10px;
+      border: 1px solid var(--aitax-border);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .modal-footer {
+      padding: 14px 20px;
+      background: #f8fafc;
+      border-top: 1px solid var(--aitax-border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .btn-secondary { background: #e2e8f0; color: #334155; border: none; padding: 8px 14px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+    .btn-primary { background: var(--aitax-maroon); color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: 700; cursor: pointer; }
+
+    @media (max-width: 900px) {
+      .app-layout { grid-template-columns: 1fr; }
+      .stats-ribbon { grid-template-columns: 1fr 1fr; }
+      .docket-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Ribbon -->
+  <header class="top-header">
+    <div class="brand">
+      <i class="fa-solid fa-scale-balanced"></i>
+      <span>AMERICAN INTERNATIONAL TAX ADVISERS</span>
+      <span style="font-weight: 400; opacity: 0.75; font-size: 0.85rem;">| Reception Desk</span>
+    </div>
+    <div class="meta-info">
+      <div class="time-badge"><i class="fa-regular fa-clock me-1"></i> <span id="clock-display">14:35 ICT</span> (Bangkok)</div>
+      <div class="lang-toggle" onclick="toggleLang()"><span id="lang-btn">TH | ภาษาไทย</span></div>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    
+    <!-- Left Sidebar: Visitor Queue -->
+    <aside class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <i class="fa-solid fa-users"></i>
+          <span>Live Reception Queue</span>
+        </div>
+        <span class="badge badge-waiting" id="queue-count">3 In Waiting</span>
+      </div>
+
+      <button class="quick-intake-btn" onclick="openIntakeModal()">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>New Walk-In Check-In</span>
+      </button>
+
+      <div class="queue-list" id="queue-container">
+        <!-- Rendered dynamically -->
+      </div>
+    </aside>
+
+    <!-- Right Main Panel -->
+    <main class="main-panel">
+
+      <!-- Metrics -->
+      <div class="stats-ribbon">
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <div>
+            <div class="stat-val">12</div>
+            <div class="stat-lbl">Today's Appointments</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-person-walking-luggage"></i></div>
+          <div>
+            <div class="stat-val">5</div>
+            <div class="stat-lbl">Walk-Ins Logged</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-file-signature"></i></div>
+          <div>
+            <div class="stat-val">8</div>
+            <div class="stat-lbl">Form 8879 Pickups</div>
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <div>
+            <div class="stat-val">7</div>
+            <div class="stat-lbl">Staff Active</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Client Profile & Actions -->
+      <section class="client-docket">
+        <div class="docket-header">
+          <div class="docket-title">
+            <h2 id="docket-name"><i class="fa-solid fa-circle-user"></i> Gerard Flanagan</h2>
+            <p id="docket-subtitle">US 1040 Expat Filing · In-Office Consultation with Chetan Nama</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="status-select-btn" onclick="updateVisitorStatus('With Preparer')"><i class="fa-solid fa-arrow-right me-1"></i> Send to Advisor</button>
+            <button class="status-select-btn" style="background: var(--aitax-success);" onclick="updateVisitorStatus('Completed')"><i class="fa-solid fa-check me-1"></i> Checkout</button>
+          </div>
+        </div>
+
+        <div class="docket-grid">
+          <div class="grid-cell">
+            <div class="cell-lbl">Tax Filing Status</div>
+            <div class="cell-val" id="docket-status">Single</div>
+          </div>
+          <div class="grid-cell">
+            <div class="cell-lbl">Taxpayer Status</div>
+            <div class="cell-val" id="docket-taxpayer">US Taxpayer (Active)</div>
+          </div>
+          <div class="grid-cell">
+            <div class="cell-lbl">Preferred Language</div>
+            <div class="cell-val" id="docket-lang">English</div>
+          </div>
+          <div class="grid-cell">
+            <div class="cell-lbl">Lead Tax Advisor</div>
+            <div class="cell-val" id="docket-advisor">Chetan Nama</div>
+          </div>
+          <div class="grid-cell">
+            <div class="cell-lbl">Engagement Value</div>
+            <div class="cell-val" id="docket-fee">$1,850.00 USD</div>
+          </div>
+          <div class="grid-cell">
+            <div class="cell-lbl">Last Return Filed</div>
+            <div class="cell-val" id="docket-last-return">2023 (Form 1040)</div>
+          </div>
+        </div>
+
+        <div style="font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--aitax-blue); margin-bottom: 6px;">
+          <i class="fa-solid fa-bars-progress me-1"></i> SuiteDash 8-Stage Return Progress
+        </div>
+        <div class="pipeline-tracker" id="pipeline-stages-bar">
+          <!-- Rendered via JS -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Intake Modal -->
+  <div class="modal-backdrop" id="intake-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div><i class="fa-solid fa-id-card me-2"></i> Client Check-In / Fast Intake</div>
+        <i class="fa-solid fa-xmark" style="cursor:pointer;" onclick="closeIntakeModal()"></i>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Full Legal Name</label>
+          <input type="text" id="intake-name" placeholder="e.g. Johnathan Smith">
+        </div>
+        <div class="form-group">
+          <label>Tax Service Required</label>
+          <select id="intake-service">
+            <option>US Form 1040 (Expatriate Return)</option>
+            <option>Thai PIT 91 Personal Tax</option>
+            <option>Dual US & Thai Filing</option>
+            <option>Corporate 1120 / Partnership 1065</option>
+            <option>Streamlined Foreign Offshore (SFOP)</option>
+            <option>Notary / TIN Application</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Assign Available Advisor</label>
+          <select id="intake-advisor">
+            <option>Chetan Nama (Senior Tax Partner)</option>
+            <option>Thomas Carden (US Tax Specialist)</option>
+            <option>Sumitr Ruangwattanasakul (Thai Tax Counsel)</option>
+            <option>Chris Mc Laughlin (US Expat Prep)</option>
+            <option>Asa Mizoi (Crossborder Counsel)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Check-In Type</label>
+          <select id="intake-type">
+            <option>Walk-In (Unscheduled)</option>
+            <option>Scheduled Appointment</option>
+            <option>Document Drop-Off (Form 8879)</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeIntakeModal()">Cancel</button>
+        <button class="btn-primary" onclick="submitIntake()"><i class="fa-solid fa-check me-1"></i> Add to Queue</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const CLIENTS = [
+      { id: 1, name: "Gerard Flanagan", service: "US 1040 Expat", advisor: "Chetan Nama", status: "Waiting", time: "14:15", stageIdx: 3, filingStatus: "Single", taxpayer: "US Taxpayer", lang: "English", fee: "$1,850.00", lastReturn: "2023 (1040)" },
+      { id: 2, name: "Dennis Manley", service: "US 1040 + FBAR", advisor: "Thomas Carden", status: "With Preparer", time: "13:45", stageIdx: 2, filingStatus: "Married Filing Jointly", taxpayer: "US Taxpayer", lang: "English", fee: "$2,400.00", lastReturn: "2023 (1040)" },
+      { id: 3, name: "Emily Johnson", service: "US 1040 + FTC", advisor: "Chris Mc Laughlin", status: "Waiting", time: "14:25", stageIdx: 1, filingStatus: "Single", taxpayer: "US Taxpayer", lang: "English", fee: "$1,650.00", lastReturn: "2023 (1040)" },
+      { id: 4, name: "Garrath Ford", service: "Thai PIT 91", advisor: "Sumitr Ruangwattanasakul", status: "Waiting", time: "14:30", stageIdx: 2, filingStatus: "Single", taxpayer: "Thai Taxpayer", lang: "English / Thai", fee: "฿18,500.00", lastReturn: "2023 (PIT 91)" },
+      { id: 5, name: "Karl Axelsson", service: "Corporate 1120", advisor: "Chetan Nama", status: "Completed", time: "12:30", stageIdx: 4, filingStatus: "Corporate / Entity", taxpayer: "US Taxpayer", lang: "English / Swedish", fee: "$4,800.00", lastReturn: "2022 (1120)" }
+    ];
+
+    const STAGES = [
+      "Intake / Quotation",
+      "Information Gathering",
+      "Processing Return",
+      "Chetan Review",
+      "Client Review",
+      "Awaiting Payment",
+      "Filed / Completed",
+      "Not Proceeding"
+    ];
+
+    let activeClient = CLIENTS[0];
+
+    function renderQueue() {
+      const container = document.getElementById('queue-container');
+      container.innerHTML = '';
+      CLIENTS.forEach(c => {
+        const item = document.createElement('div');
+        item.className = `queue-item ${c.id === activeClient.id ? 'active' : ''}`;
+        item.onclick = () => selectClient(c.id);
+
+        let badgeClass = 'badge-waiting';
+        if (c.status === 'With Preparer') badgeClass = 'badge-with-advisor';
+        if (c.status === 'Completed') badgeClass = 'badge-completed';
+
+        item.innerHTML = `
+          <div class="queue-header-row">
+            <span class="client-name">${c.name}</span>
+            <span class="badge ${badgeClass}">${c.status}</span>
+          </div>
+          <div class="queue-details-row">
+            <span><i class="fa-solid fa-file-lines me-1"></i>${c.service}</span>
+            <span class="advisor-assigned"><i class="fa-solid fa-user-tie me-1"></i>${c.advisor}</span>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+
+      const waitingCount = CLIENTS.filter(c => c.status === 'Waiting').length;
+      document.getElementById('queue-count').innerText = `${waitingCount} In Waiting`;
+    }
+
+    function selectClient(id) {
+      activeClient = CLIENTS.find(c => c.id === id);
+      renderQueue();
+      renderDocket();
+    }
+
+    function renderDocket() {
+      document.getElementById('docket-name').innerHTML = `<i class="fa-solid fa-circle-user"></i> ${activeClient.name}`;
+      document.getElementById('docket-subtitle').innerText = `${activeClient.service} · Advisor: ${activeClient.advisor} · Status: ${activeClient.status}`;
+      document.getElementById('docket-status').innerText = activeClient.filingStatus;
+      document.getElementById('docket-taxpayer').innerText = activeClient.taxpayer;
+      document.getElementById('docket-lang').innerText = activeClient.lang;
+      document.getElementById('docket-advisor').innerText = activeClient.advisor;
+      document.getElementById('docket-fee').innerText = activeClient.fee;
+      document.getElementById('docket-last-return').innerText = activeClient.lastReturn;
+
+      // Pipeline Stages
+      const pContainer = document.getElementById('pipeline-stages-bar');
+      pContainer.innerHTML = '';
+      STAGES.forEach((stg, idx) => {
+        const node = document.createElement('div');
+        let stateClass = '';
+        if (idx < activeClient.stageIdx) stateClass = 'completed';
+        else if (idx === activeClient.stageIdx) stateClass = 'active';
+
+        node.className = `stage-node ${stateClass}`;
+        node.innerHTML = `
+          <div class="node-dot">${idx + 1}</div>
+          <div class="stage-lbl">${stg}</div>
+        `;
+        pContainer.appendChild(node);
+      });
+    }
+
+    function updateVisitorStatus(status) {
+      activeClient.status = status;
+      renderQueue();
+      renderDocket();
+    }
+
+    function openIntakeModal() { document.getElementById('intake-modal').classList.add('open'); }
+    function closeIntakeModal() { document.getElementById('intake-modal').classList.remove('open'); }
+
+    function submitIntake() {
+      const name = document.getElementById('intake-name').value.trim();
+      const service = document.getElementById('intake-service').value;
+      const advisor = document.getElementById('intake-advisor').value.split(' ')[0] + ' ' + document.getElementById('intake-advisor').value.split(' ')[1];
+      if (!name) return alert('Please enter client legal name');
+
+      const newC = {
+        id: Date.now(),
+        name,
+        service,
+        advisor,
+        status: "Waiting",
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        stageIdx: 0,
+        filingStatus: "Single",
+        taxpayer: "US Taxpayer",
+        lang: "English",
+        fee: "$1,850.00",
+        lastReturn: "2023 (1040)"
+      };
+
+      CLIENTS.unshift(newC);
+      activeClient = newC;
+      closeIntakeModal();
+      document.getElementById('intake-name').value = '';
+      renderQueue();
+      renderDocket();
+    }
+
+    function toggleLang() {
+      const btn = document.getElementById('lang-btn');
+      btn.innerText = btn.innerText.includes('TH') ? 'EN | English' : 'TH | ภาษาไทย';
+    }
+
+    // Live clock
+    setInterval(() => {
+      const now = new Date();
+      document.getElementById('clock-display').innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' ICT';
+    }, 1000);
+
+    renderQueue();
+    renderDocket();
+  </script>
+</body>
+</html>
