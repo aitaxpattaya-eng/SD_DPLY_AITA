@@ -1,13 +1,13 @@
 /**
  * AI Tax Advisers - SuiteDash Injection Loader (with Async Polling)
- * Hosted at: https://www.aitaxadvisers.com/SD-Portal/aitax-loader.js
+ * Hosted at: https://aitaxadvisers.netlify.app/aitax-loader.js
  */
 
 (function() {
     // 1. Load Base CSS
     var baseCss = document.createElement('link');
     baseCss.rel = 'stylesheet';
-    baseCss.href = 'https://www.aitaxadvisers.com/SD-Portal/aitax-base.css';
+    baseCss.href = 'https://aitaxadvisers.netlify.app/aitax-base.css';
     document.head.appendChild(baseCss);
 
     console.log("[aitax] Base styles injected.");
