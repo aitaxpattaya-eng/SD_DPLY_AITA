@@ -70,7 +70,7 @@ function Get-SDHeaders {
 
 function Get-SDBase {
     if ($env:SUITEDASH_BASE) { return $env:SUITEDASH_BASE.TrimEnd('/') }
-    return 'https://app.virtuallaunch.pro'
+    return 'https://secure.aitaxadvisers.com
 }
 
 <#
