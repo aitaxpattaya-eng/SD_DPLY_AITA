@@ -1,0 +1,162 @@
+<style>
+/* 
+  LENTAX FRONT OFFICE STACK
+  Scope: #dashboard-view (Admin Dashboard)
+  Brand: AITax (Navy #003366, Red #d9534f)
+  Typography: Cormorant Garamond (Serif), Inter (Sans)
+*/
+
+:root {
+  --fo-navy: #003366;
+  --fo-red: #d9534f;
+  --fo-glass: rgba(255, 255, 255, 0.7);
+  --fo-slate: #64748b;
+  --fo-bg: #f1f5f9;
+}
+
+/* 1. Glassmorphism Panel Base */
+#dashboard-view .dashboard-organize-box, 
+#dashboard-view .reporting__block {
+  background: var(--fo-glass) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+#dashboard-view .dashboard-organize-box:hover, 
+#dashboard-view .reporting__block:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2. Typography Overrides */
+#dashboard-view h1, 
+#dashboard-view h2, 
+#dashboard-view h3, 
+#dashboard-view .reporting__block__title__text,
+#dashboard-view .widget-title {
+  font-family: 'Cormorant Garamond', serif !important;
+  color: var(--fo-navy) !important;
+  -webkit-text-fill-color: var(--fo-navy) !important; /* Fixes the SD Ghost */
+}
+
+#dashboard-view body, 
+#dashboard-view .reporting__block__value__current,
+#dashboard-view .dashboard-item__title {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* 3. The Rapid Intake Form Styling (Custom Embed Block) */
+.fo-intake-container {
+  padding: 20px;
+  background: #fff;
+  border-radius: 14px;
+  border-left: 6px solid var(--fo-red) !important;
+}
+
+.fo-intake-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.fo-intake-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.fo-intake-field label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--fo-slate);
+  margin-bottom: 5px;
+}
+
+.fo-intake-input {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.fo-btn-log {
+  background-color: var(--fo-red) !important;
+  color: white !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  grid-column: span 3;
+  text-align: center;
+}
+
+.fo-btn-log:hover {
+  opacity: 0.9;
+}
+
+/* 4. Quick-Link Gallery */
+.fo-link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.fo-link-card {
+  background: var(--fo-glass);
+  padding: 20px;
+  text-align: center;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--fo-navy);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+.fo-link-card:hover {
+  background: var(--fo-navy);
+  color: white !important;
+  transform: scale(1.05);
+}
+
+.fo-link-card i {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 5. Daily Queue Styling */
+.fo-queue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fo-queue-item:last-child {
+  border-bottom: none;
+}
+
+.fo-status-pill {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--fo-slate);
+  color: white;
+}
+
+.fo-status-urgent {
+  background: var(--fo-red);
+}
+</style>
