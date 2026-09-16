@@ -22,7 +22,7 @@
             
             var foCss = document.createElement('link');
             foCss.rel = 'stylesheet';
-            foCss.href = 'https://aitaxadvisers.netlify.app/front-office.css';
+            foCss.href = 'https://aitaxadvisers.netlify.app/css/front-office.css';
             document.head.appendChild(foCss);
         }
     }
