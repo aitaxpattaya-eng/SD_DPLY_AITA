@@ -1,0 +1,224 @@
+<style>
+/* 
+  LENTAX FRONT OFFICE MASTER STACK
+  Scope: #dashboard-view (Admin Dashboard)
+  Brand: AITax (Navy #003366, Red #d9534f)
+  Typography: Cormorant Garamond (Serif), Inter (Sans)
+*/
+
+:root {
+  --fo-navy: #003366;
+  --fo-red: #d9534f;
+  --fo-glass: rgba(255, 255, 255, 0.7);
+  --fo-slate: #64748b;
+  --fo-bg: #f1f5f9;
+  --fo-border: rgba(0, 51, 102, 0.15);
+}
+
+/* 1. Glassmorphism Panel Base */
+#dashboard-view .dashboard-organize-box, 
+#dashboard-view .reporting__block,
+#dashboard-view .fo-custom-panel {
+  background: var(--fo-glass) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid var(--fo-border) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+#dashboard-view .dashboard-organize-box:hover, 
+#dashboard-view .reporting__block:hover,
+#dashboard-view .fo-custom-panel:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 2. Typography Overrides */
+#dashboard-view h1, #dashboard-view h2, #dashboard-view h3, 
+#dashboard-view .reporting__block__title__text,
+#dashboard-view .widget-title,
+#dashboard-view .fo-title {
+  font-family: 'Cormorant Garamond', serif !important;
+  color: var(--fo-navy) !important;
+  -webkit-text-fill-color: var(--fo-navy) !important;
+}
+
+#dashboard-view body, 
+#dashboard-view .reporting__block__value__current,
+#dashboard-view .dashboard-item__title,
+#dashboard-view .fo-text {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* 3. RAPID LOG TERMINAL (The "Switchboard") */
+.fo-intake-container {
+  padding: 24px;
+  background: #fff !important;
+  border-radius: 14px !important;
+  border-left: 6px solid var(--fo-red) !important;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05) !important;
+}
+
+.fo-intake-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.fo-intake-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.fo-intake-field label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--fo-slate);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.fo-intake-input {
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+}
+
+.fo-btn-log {
+  background-color: var(--fo-red) !important;
+  color: white !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: 0 4px 0 #a93f3b;
+}
+
+.fo-btn-log:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #a93f3b;
+}
+
+/* 4. ASANA-STYLE PIPELINE (Kanban) */
+.fo-pipeline {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+}
+
+.fo-pipeline-column {
+  flex: 0 0 300px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 15px;
+  min-height: 400px;
+}
+
+.fo-pipeline-header {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--fo-navy);
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fo-pipeline-count {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  background: var(--fo-navy);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.fo-file-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.fo-file-card:hover {
+  border-color: var(--fo-red);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.fo-file-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--fo-navy);
+  margin-bottom: 5px;
+}
+
+.fo-file-meta {
+  font-size: 11px;
+  color: var(--fo-slate);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 5. DAILY PULSE (Quick Links) */
+.fo-link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.fo-link-card {
+  background: var(--fo-glass);
+  padding: 20px;
+  text-align: center;
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--fo-navy);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  border: 1px solid var(--fo-border);
+  transition: all 0.2s;
+}
+
+.fo-link-card:hover {
+  background: var(--fo-navy);
+  color: white !important;
+  transform: scale(1.02);
+}
+
+.fo-link-card i {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* 6. STATUS PILLS */
+.fo-pill {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.pill-intake { background: #e2e8f0; color: #475569; }
+.pill-process { background: #dbeafe; color: #1e40af; }
+.pill-review { background: #fef3c7; color: #92400e; }
+.pill-complete { background: #dcfce7; color: #166534; }
+</style>
