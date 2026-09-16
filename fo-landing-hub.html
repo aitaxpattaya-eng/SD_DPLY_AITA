@@ -1,0 +1,188 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<div class="fo-landing-hub">
+  <div class="fo-hero">
+    <img src="https://www.aitaxadvisers.com/images/logo.png" alt="AITax Logo" class="fo-logo">
+    <h1 class="fo-title">Front Office Command Center</h1>
+    <p class="fo-greeting">Welcome, Staff. Ready for rapid intake.</p>
+    <div class="fo-clock" id="fo-live-clock">Loading Time...</div>
+  </div>
+
+  <div class="fo-action-grid">
+    <a href="/dashboard" class="fo-hub-card primary">
+      <div class="fo-hub-icon">📞</div>
+      <div class="fo-hub-text">Incoming Call</div>
+      <div class="fo-hub-sub">Rapid Log & Deep-link to File</div>
+    </a>
+    <a href="/check-in" class="fo-hub-card">
+      <div class="fo-hub-icon">👤</div>
+      <div class="fo-hub-text">Client Check-in</div>
+      <div class="fo-hub-sub">Mark client as arrived</div>
+    </a>
+    <a href="/pipeline" class="fo-hub-card">
+      <div class="fo-hub-icon">📋</div>
+      <div class="fo-hub-text">File Pipeline</div>
+      <div class="fo-hub-sub">Asana-style progress view</div>
+    </a>
+    <a href="/calendar" class="fo-hub-card">
+      <div class="fo-hub-icon">📅</div>
+      <div class="fo-hub-text">Daily Schedule</div>
+      <div class="fo-hub-sub">View today's appointments</div>
+    </a>
+    <a href="/directory" class="fo-hub-card">
+      <div class="fo-hub-icon">👥</div>
+      <div class="fo-hub-text">Team Directory</div>
+      <div class="fo-hub-sub">Contact Management Team</div>
+    </a>
+    <a href="/sop" class="fo-hub-card">
+      <div class="fo-hub-icon">📖</div>
+      <div class="fo-hub-text">Office SOP</div>
+      <div class="fo-hub-sub">Standard Operating Procedures</div>
+    </a>
+  </div>
+
+  <div class="fo-footer">
+    <a href="https://www.aitaxadvisers.com" target="_blank">Official Website</a>
+    <span class="fo-dot">•</span>
+    <a href="https://lin.ee/7fw8THE" target="_blank">Line Account</a>
+  </div>
+</div>
+
+<style>
+.fo-landing-hub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  font-family: 'Inter', sans-serif;
+  color: #003366;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.fo-hero {
+  margin-bottom: 50px;
+}
+
+.fo-logo {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.fo-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.fo-greeting {
+  font-size: 1.2rem;
+  color: #64748b;
+}
+
+.fo-clock {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #d9534f;
+}
+
+.fo-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.fo-hub-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 51, 102, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  text-decoration: none;
+  color: #003366;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.fo-hub-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  background: #fff;
+  border-color: #d9534f;
+}
+
+.fo-hub-card.primary {
+  border: 2px solid #d9534f;
+  background: rgba(217, 83, 79, 0.05);
+}
+
+.fo-hub-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.fo-hub-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.fo-hub-sub {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.fo-footer {
+  margin-top: 60px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.fo-footer a {
+  color: #003366;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.fo-footer a:hover {
+  color: #d9534f;
+}
+
+.fo-dot {
+  color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  .fo-action-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+(function() {
+  function updateClock() {
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+    const clockElem = document.getElementById('fo-live-clock');
+    if (clockElem) {
+      clockElem.innerText = now.toLocaleTimeString([], options);
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+})();
+</script>
