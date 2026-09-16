@@ -1,0 +1,501 @@
+<div class="card-block styling-options-content dashboard-page-content aitax-skinned" id="dashboard-view">
+    
+<sd-content-block-editor data-data-ctrl="" data-controller-id="" data-company-id="64372" class="content-block-behavior-html ng-scope">
+    <div class="content-block-wrapper content-block-view-wrapper" ng-init="viewMode=1; demoMode = 0; renderPlaceholders=1; isEmailBehavior=0">
+        <div class="cbe-content">
+            <!-- ngRepeat: block in contentBlockEditor.contentData --><div ng-repeat="block in contentBlockEditor.contentData" class="ng-scope">
+                <sd-content-block-template class="cbe-block-wrapper ng-scope" template="Row-1" blockid="1670889875795" block-ctrl="RowController"><!-- ngInclude: getTemplateURL() --><div ng-include="getTemplateURL()" class="ng-scope">
+
+    
+<div class="row no-gutters cbe-row-wrapper ng-scope  dash-row-1" ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]" ng-style="block.options.styles" id="cbe-block-1670889875795">
+
+    
+            <div class="cbe-block col-12 ng-scope" column-id="0">
+        <!-- ngIf: editMode -->
+
+        <!-- ngIf: !editMode --><div ng-if="!editMode" ng-class="blockCtrl.block.options.customClass" class="cbe-block-sortable ng-scope ash-row-1-col" ng-style="blockCtrl.block.options.styles">
+            <!-- ngRepeat: item in block.children[0] track by item.blockID --><div ng-repeat="item in block.children[0] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875798" ng-controller="WelcomeBlockController" block-ctrl="WelcomeBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-welcome ng-scope  dash-welcome-block" id="cbe-block-1670889875798" ng-class="[{'cbe-block-custom-clr': item.options.styles.color}, item.options.customClass]" ng-style="item.options.styles" style="padding-right: 15px; padding-left: 15px; text-align: center;">
+    <!-- ngIf: editMode -->
+    
+    <div class="cbe-block-welcome-image" ng-show="blockCtrl.imageURL">
+        <img class="cbe-block-single-image" ng-src="/themes/mpa/assets/img/welcome-images/frame-2.png" width="" height="" ng-style="blockCtrl.imageStyle" src="/themes/mpa/assets/img/welcome-images/frame-2.png">
+    </div>
+    
+    <!-- ngIf: editMode || !renderPlaceholders -->
+    <!-- ngIf: viewMode && renderPlaceholders --><div ng-if="viewMode &amp;&amp; renderPlaceholders" class="cbe-block-welcome-message wysiwyg-content ng-binding ng-scope" sd-compile-bind-html="blockCtrl.content"><h1 class="ng-scope"><span style="font-size: 30px;">Welcome to the Secure Portal!</span></h1>
+<p class="ng-scope"><span style="font-size: 18px;">Congratulations&nbsp;, you have arrived at our Secure&nbsp;Portal. We hope you'll find the experience helpful and convenient, but we're always looking to improve, so if you have suggestions or feedback, we'd love to hear them!</span><br></p></div><!-- end ngIf: viewMode && renderPlaceholders -->
+</div>
+            <style type="text/css" class="ng-binding ng-scope">
+             
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[0] track by item.blockID -->
+        </div><!-- end ngIf: !editMode -->
+      </div>
+        
+    <!-- ngIf: editMode && !isStack -->
+
+    <!-- ngIf: blockCtrl.isHoverStyles() --><style type="text/css" ng-if="blockCtrl.isHoverStyles()" class="ng-binding ng-scope">
+        
+    </style><!-- end ngIf: blockCtrl.isHoverStyles() -->
+</div>
+
+</div></sd-content-block-template></div><!-- end ngRepeat: block in contentBlockEditor.contentData --><div ng-repeat="block in contentBlockEditor.contentData" class="ng-scope">
+                <sd-content-block-template class="cbe-block-wrapper ng-scope" template="Row-1-1-1-1" blockid="1670889875803" block-ctrl="RowController"><!-- ngInclude: getTemplateURL() --><div ng-include="getTemplateURL()" class="ng-scope">
+
+    
+<div class="row no-gutters cbe-row-wrapper ng-scope  dash-row-2" ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]" ng-style="block.options.styles" id="cbe-block-1670889875803">
+
+    
+            <div class="cbe-block col-12 col-sm-6 col-xl-3 ng-scope" column-id="0">
+        <!-- ngIf: editMode -->
+
+        <!-- ngIf: !editMode --><div ng-if="!editMode" ng-class="blockCtrl.block.options.customClass" class="cbe-block-sortable ng-scope dash-row-2-col dash-col-1" ng-style="blockCtrl.block.options.styles">
+            <!-- ngRepeat: item in block.children[0] track by item.blockID --><div ng-repeat="item in block.children[0] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875804" ng-controller="ContentTextBlockController" block-ctrl="ContentTextBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-content-text ng-scope" id="cbe-block-1670889875804" ng-class="[{'cbe-block-custom-clr': item.options.styles.color}, item.options.customClass]" ng-style="item.options.styles" style="padding-right: 15px; padding-left: 15px;">
+    <!-- ngIf: editMode -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders --><div ng-if="blockCtrl.readablePlaceholders &amp;&amp; viewMode &amp;&amp; renderPlaceholders" class="wysiwyg-content ng-binding ng-scope" sd-compile-bind-html="blockCtrl.content | sdToReadablePlaceholders">
+<div class="dash-col-icon ng-scope">
+    <em class="fas fa-calendar-alt" aria-hidden="true"></em>
+</div>
+<p style="text-align: center;" class="ng-scope">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod ullam doloremque. Sequi, non! Illo corrupti dolorem, placeat obcaecati impedit quas accusamus quo consequuntur. Sunt aperiam repudiandae officia provident explicabo.</p>
+</div><!-- end ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+</div>
+            <style type="text/css" class="ng-binding ng-scope">
+             
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[0] track by item.blockID --><div ng-repeat="item in block.children[0] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875808" ng-controller="ButtonBlockController" block-ctrl="ButtonBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-button ng-scope  dash-button" ng-class="[{'hidden': blockCtrl.hideBlock, 'disabled': blockCtrl.disabled}, item.options.customClass]" ng-style="blockCtrl.wrapperStyles" style="text-align: center;">
+    <!-- ngIf: editMode -->
+    <a ng-attr-href="{{blockCtrl.getClickUrl()}}" ng-click="blockCtrl.doAction($event);" ng-attr-target="{{(blockCtrl.isNewTab() &amp;&amp; item.options.newTab) ? '_blank' : '_self'}}" id="cbe-block-1670889875808" class="cbe-block-button-element btn btn-primary" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; width: 50%; text-align: center; border-radius: 10px; background-color: rgb(148, 183, 248);" ng-style="item.options.styles" href="/your-calendar" target="_self">
+      <!-- ngIf: item.options.iconClass --><!-- ngIf: item.options.label --><span ng-if="item.options.label" class="ng-binding ng-scope">Calendar</span><!-- end ngIf: item.options.label -->
+    </a>
+</div>
+
+            <style type="text/css" class="ng-binding ng-scope">
+             #cbe-block-1670889875808:hover {background-color: rgb(103, 139, 205) !important;}
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[0] track by item.blockID -->
+        </div><!-- end ngIf: !editMode -->
+      </div>
+            <div class="cbe-block col-12 col-sm-6 col-xl-3 ng-scope" column-id="1">
+        <!-- ngIf: editMode -->
+
+        <!-- ngIf: !editMode --><div ng-if="!editMode" ng-class="blockCtrl.block.options.customClass" class="cbe-block-sortable ng-scope dash-row-2-col dash-col-2" ng-style="blockCtrl.block.options.styles">
+            <!-- ngRepeat: item in block.children[1] track by item.blockID --><div ng-repeat="item in block.children[1] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875805" ng-controller="ContentTextBlockController" block-ctrl="ContentTextBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-content-text ng-scope" id="cbe-block-1670889875805" ng-class="[{'cbe-block-custom-clr': item.options.styles.color}, item.options.customClass]" ng-style="item.options.styles" style="padding-right: 15px; padding-left: 15px;">
+    <!-- ngIf: editMode -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders --><div ng-if="blockCtrl.readablePlaceholders &amp;&amp; viewMode &amp;&amp; renderPlaceholders" class="wysiwyg-content ng-binding ng-scope" sd-compile-bind-html="blockCtrl.content | sdToReadablePlaceholders">
+<div class="dash-col-icon ng-scope">
+    <em class="fas fa-hammer" aria-hidden="true"></em>
+</div>
+<p style="text-align: center;" class="ng-scope">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod ullam doloremque. Sequi, non! Illo corrupti dolorem, placeat obcaecati impedit quas accusamus quo consequuntur. Sunt aperiam repudiandae officia provident explicabo.</p>
+</div><!-- end ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+</div>
+            <style type="text/css" class="ng-binding ng-scope">
+             
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[1] track by item.blockID --><div ng-repeat="item in block.children[1] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875809" ng-controller="ButtonBlockController" block-ctrl="ButtonBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-button ng-scope  dash-button" ng-class="[{'hidden': blockCtrl.hideBlock, 'disabled': blockCtrl.disabled}, item.options.customClass]" ng-style="blockCtrl.wrapperStyles" style="text-align: center;">
+    <!-- ngIf: editMode -->
+    <a ng-attr-href="{{blockCtrl.getClickUrl()}}" ng-click="blockCtrl.doAction($event);" ng-attr-target="{{(blockCtrl.isNewTab() &amp;&amp; item.options.newTab) ? '_blank' : '_self'}}" id="cbe-block-1670889875809" class="cbe-block-button-element btn btn-primary" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 10px; width: 50%; text-align: center; background-color: rgb(148, 183, 248);" ng-style="item.options.styles" href="/pm/project" target="_self">
+      <!-- ngIf: item.options.iconClass --><!-- ngIf: item.options.label --><span ng-if="item.options.label" class="ng-binding ng-scope">Projects</span><!-- end ngIf: item.options.label -->
+    </a>
+</div>
+
+            <style type="text/css" class="ng-binding ng-scope">
+             #cbe-block-1670889875809:hover {background-color: rgb(103, 139, 205) !important;}
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[1] track by item.blockID -->
+        </div><!-- end ngIf: !editMode -->
+      </div>
+            <div class="cbe-block col-12 col-sm-6 col-xl-3 ng-scope" column-id="2">
+        <!-- ngIf: editMode -->
+
+        <!-- ngIf: !editMode --><div ng-if="!editMode" ng-class="blockCtrl.block.options.customClass" class="cbe-block-sortable ng-scope dash-row-2-col dash-col-3" ng-style="blockCtrl.block.options.styles">
+            <!-- ngRepeat: item in block.children[2] track by item.blockID --><div ng-repeat="item in block.children[2] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875806" ng-controller="ContentTextBlockController" block-ctrl="ContentTextBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-content-text ng-scope" id="cbe-block-1670889875806" ng-class="[{'cbe-block-custom-clr': item.options.styles.color}, item.options.customClass]" ng-style="item.options.styles" style="padding-right: 15px; padding-left: 15px;">
+    <!-- ngIf: editMode -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders --><div ng-if="blockCtrl.readablePlaceholders &amp;&amp; viewMode &amp;&amp; renderPlaceholders" class="wysiwyg-content ng-binding ng-scope" sd-compile-bind-html="blockCtrl.content | sdToReadablePlaceholders">
+<div class="dash-col-icon ng-scope">
+    <em class="fas fa-receipt" aria-hidden="true"></em>
+</div>
+<p style="text-align: center;" class="ng-scope">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod ullam doloremque. Sequi, non! Illo corrupti dolorem, placeat obcaecati impedit quas accusamus quo consequuntur. Sunt aperiam repudiandae officia provident explicabo.</p>
+</div><!-- end ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+</div>
+            <style type="text/css" class="ng-binding ng-scope">
+             
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[2] track by item.blockID --><div ng-repeat="item in block.children[2] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875810" ng-controller="ButtonBlockController" block-ctrl="ButtonBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-button ng-scope  dash-button" ng-class="[{'hidden': blockCtrl.hideBlock, 'disabled': blockCtrl.disabled}, item.options.customClass]" ng-style="blockCtrl.wrapperStyles" style="text-align: center;">
+    <!-- ngIf: editMode -->
+    <a ng-attr-href="{{blockCtrl.getClickUrl()}}" ng-click="blockCtrl.doAction($event);" ng-attr-target="{{(blockCtrl.isNewTab() &amp;&amp; item.options.newTab) ? '_blank' : '_self'}}" id="cbe-block-1670889875810" class="cbe-block-button-element btn btn-primary" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; width: 50%; text-align: center; background-color: rgb(148, 183, 248);" ng-style="item.options.styles" href="/invoices/admin?Invoices[status]=open" target="_self">
+      <!-- ngIf: item.options.iconClass --><!-- ngIf: item.options.label --><span ng-if="item.options.label" class="ng-binding ng-scope">Invoices</span><!-- end ngIf: item.options.label -->
+    </a>
+</div>
+
+            <style type="text/css" class="ng-binding ng-scope">
+             #cbe-block-1670889875810:hover {background-color: rgb(103, 139, 205) !important;}
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[2] track by item.blockID -->
+        </div><!-- end ngIf: !editMode -->
+      </div>
+            <div class="cbe-block col-12 col-sm-6 col-xl-3 ng-scope" column-id="3">
+        <!-- ngIf: editMode -->
+
+        <!-- ngIf: !editMode --><div ng-if="!editMode" ng-class="blockCtrl.block.options.customClass" class="cbe-block-sortable ng-scope dash-row-2-col dash-col-4" ng-style="blockCtrl.block.options.styles">
+            <!-- ngRepeat: item in block.children[3] track by item.blockID --><div ng-repeat="item in block.children[3] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875807" ng-controller="ContentTextBlockController" block-ctrl="ContentTextBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-content-text ng-scope" id="cbe-block-1670889875807" ng-class="[{'cbe-block-custom-clr': item.options.styles.color}, item.options.customClass]" ng-style="item.options.styles" style="padding-right: 15px; padding-left: 15px;">
+    <!-- ngIf: editMode -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: !blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && (editMode || !renderPlaceholders) -->
+  <!-- ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders --><div ng-if="blockCtrl.readablePlaceholders &amp;&amp; viewMode &amp;&amp; renderPlaceholders" class="wysiwyg-content ng-binding ng-scope" sd-compile-bind-html="blockCtrl.content | sdToReadablePlaceholders">
+<div class="dash-col-icon ng-scope">
+    <em class="fas fa-file-alt" aria-hidden="true"></em>
+</div>
+<p style="text-align: center;" class="ng-scope">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quod ullam doloremque. Sequi, non! Illo corrupti dolorem, placeat obcaecati impedit quas accusamus quo consequuntur. Sunt aperiam repudiandae officia provident explicabo.</p>
+</div><!-- end ngIf: blockCtrl.readablePlaceholders && viewMode && renderPlaceholders -->
+</div>
+            <style type="text/css" class="ng-binding ng-scope">
+             
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[3] track by item.blockID --><div ng-repeat="item in block.children[3] track by item.blockID" class="cbe-block-items ng-scope">
+                <sd-content-block-render-block class="cbe-block-wrapper ng-scope" blockid="1670889875811" ng-controller="ButtonBlockController" block-ctrl="ButtonBlockController"><!-- ngInclude: blockCtrl.blockTemplate --><div ng-include="blockCtrl.blockTemplate" class="ng-scope">
+<div class="cbe-block-button ng-scope  dash-button" ng-class="[{'hidden': blockCtrl.hideBlock, 'disabled': blockCtrl.disabled}, item.options.customClass]" ng-style="blockCtrl.wrapperStyles" style="text-align: center;">
+    <!-- ngIf: editMode -->
+    <a ng-attr-href="{{blockCtrl.getClickUrl()}}" ng-click="blockCtrl.doAction($event);" ng-attr-target="{{(blockCtrl.isNewTab() &amp;&amp; item.options.newTab) ? '_blank' : '_self'}}" id="cbe-block-1670889875811" class="cbe-block-button-element btn btn-primary" style="display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; width: 50%; text-align: center; background-color: rgb(148, 183, 248);" ng-style="item.options.styles" href="/your-files" target="_self">
+      <!-- ngIf: item.options.iconClass --><!-- ngIf: item.options.label --><span ng-if="item.options.label" class="ng-binding ng-scope">Files</span><!-- end ngIf: item.options.label -->
+    </a>
+</div>
+
+            <style type="text/css" class="ng-binding ng-scope">
+             #cbe-block-1670889875811:hover {background-color: rgb(103, 139, 205) !important;}
+            </style></div></sd-content-block-render-block></div><!-- end ngRepeat: item in block.children[3] track by item.blockID -->
+        </div><!-- end ngIf: !editMode -->
+      </div>
+        
+    <!-- ngIf: editMode && !isStack -->
+
+    <!-- ngIf: blockCtrl.isHoverStyles() --><style type="text/css" ng-if="blockCtrl.isHoverStyles()" class="ng-binding ng-scope">
+        
+    </style><!-- end ngIf: blockCtrl.isHoverStyles() -->
+</div>
+
+</div></sd-content-block-template></div><!-- end ngRepeat: block in contentBlockEditor.contentData -->
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="cbeRow-1-1-1-1-1-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-6 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-6 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="2" class="cbe-block col-12 col-sm-6 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="3" class="cbe-block col-12 col-sm-6 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="4" class="cbe-block col-12 col-sm-6 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="5" class="cbe-block col-12 col-sm-6 col-md-4 col-lg-2"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-1-1-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-6 col-xl-3"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-6 col-xl-3"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="2" class="cbe-block col-12 col-sm-6 col-xl-3"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="3" class="cbe-block col-12 col-sm-6 col-xl-3"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-1-1-3.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="2" class="cbe-block col-12 col-md-4 col-lg-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="3" class="cbe-block col-12 col-lg-6"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-1-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-md-4"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-md-4"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="2" class="cbe-block col-12 col-md-4"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-md-6"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-md-6"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-2-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-md-3"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-md-6"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="2" class="cbe-block col-12 col-md-3"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-2.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-5 col-md-4"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-7 col-md-8"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-3.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-4 col-md-3"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-8 col-md-9"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-4-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-3 col-md-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-6 col-md-8"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="2" class="cbe-block col-12 col-sm-3 col-md-2"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1-5.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-3 col-md-2"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-9 col-md-10"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script><script type="text/ng-template" id="cbeRow-2-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-7 col-md-8"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-5 col-md-4"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-3-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-8 col-md-9"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-4 col-md-3"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeRow-5-1.html">
+
+    
+<div class="row no-gutters cbe-row-wrapper "
+     ng-class="[{ 'cbe-block-custom-clr': block.options.styles.color, 'hidden': blockCtrl.hideRow}, block.options.customClass]"
+     ng-style="block.options.styles"
+     id="{{blockCtrl.getBlockStyleID()}}">
+
+    
+            <sd-content-block-editor-column column-id="0" class="cbe-block col-12 col-sm-9 col-md-10"></sd-content-block-editor-column>
+            <sd-content-block-editor-column column-id="1" class="cbe-block col-12 col-sm-3 col-md-2"></sd-content-block-editor-column>
+        
+    <sd-content-block-editor-control-row ng-if="editMode && !isStack"></sd-content-block-editor-control-row>
+
+    <style type="text/css" ng-if="blockCtrl.isHoverStyles()">
+        {{blockCtrl.getHoverStyles()}}
+    </style>
+</div>
+
+</script>
+<script type="text/ng-template" id="cbeStack.html">
+
+    <div class="cbe-stack-wrapper cbe-row-wrapper">
+        <sd-content-block-editor-control-stack ng-if="editMode"></sd-content-block-editor-control-stack>
+
+        <inline-loader-block ng-if="blockCtrl.isStackLoading" small class="inline-loading-block__center"></inline-loader-block>
+        <div ng-repeat="block in stackBlocks track by block.blockID">
+            <sd-content-block-template class="cbe-block-wrapper" template="{{block.template}}" blockid="{{block.blockID}}" block-ctrl="{{block.ctrl || 'RowController'}}" />
+        </div>
+    </div>
+</script><script id="contentBlockEditor.contentData" type="text/json64-template" use-current-scope="1" override="1">W3siYmxvY2tJRCI6MTY3MDg4OTg3NTc5NSwidGVtcGxhdGUiOiJSb3ctMSIsImNoaWxkcmVuIjpbW3siYmxvY2tJRCI6MTY3MDg4OTg3NTc5OCwidGVtcGxhdGUiOiJXZWxjb21lIiwib3B0aW9ucyI6eyJzdHlsZXMiOnsicGFkZGluZy1yaWdodCI6IjE1cHgiLCJwYWRkaW5nLWxlZnQiOiIxNXB4IiwidGV4dC1hbGlnbiI6ImNlbnRlciJ9LCJpbWFnZVR5cGUiOiJzZWxlY3Rpb24iLCJzZWxlY3RlZEltYWdlIjoiMiIsImltYWdlQWxpZ25tZW50IjoiY2VudGVyIiwiaW1hZ2VXaWR0aCI6IiIsImltYWdlSGVpZ2h0IjoiIiwiYWNjZXNzVXNlcnMiOltdLCJleGNsdWRlVXNlcnMiOltdLCJvbkhvdmVycyI6eyJib3JkZXJDb2xvciI6IiIsImJhY2tncm91bmRDb2xvciI6IiIsImNvbG9yIjoiIn0sImN1c3RvbUNsYXNzIjoiZGFzaC13ZWxjb21lLWJsb2NrIn0sIm1lc3NhZ2UiOiI8aDE+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDMwcHg7XCI+V2VsY29tZSB0byB0aGUgU2VjdXJlIFBvcnRhbCE8XC9zcGFuPjxcL2gxPlxuPHA+PHNwYW4gc3R5bGU9XCJmb250LXNpemU6IDE4cHg7XCI+Q29uZ3JhdHVsYXRpb25zJm5ic3A7LCB5b3UgaGF2ZSBhcnJpdmVkIGF0IG91ciBTZWN1cmUmbmJzcDtQb3J0YWwuIFdlIGhvcGUgeW91J2xsIGZpbmQgdGhlIGV4cGVyaWVuY2UgaGVscGZ1bCBhbmQgY29udmVuaWVudCwgYnV0IHdlJ3JlIGFsd2F5cyBsb29raW5nIHRvIGltcHJvdmUsIHNvIGlmIHlvdSBoYXZlIHN1Z2dlc3Rpb25zIG9yIGZlZWRiYWNrLCB3ZSdkIGxvdmUgdG8gaGVhciB0aGVtITxcL3NwYW4+PGJyPjxcL3A+In1dXSwib3B0aW9ucyI6eyJzdHlsZXMiOltdLCJhY2Nlc3NVc2VycyI6W10sImV4Y2x1ZGVVc2VycyI6W10sIm9uSG92ZXJzIjp7ImJvcmRlckNvbG9yIjoiIiwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sb3IiOiIifSwiY3VzdG9tQ2xhc3MiOiJkYXNoLXJvdy0xIn0sImNvbHVtbW4iOlt7Im9wdGlvbnMiOnsic3R5bGVzIjpbXSwiYWNjZXNzVXNlcnMiOltdLCJleGNsdWRlVXNlcnMiOltdLCJvbkhvdmVycyI6eyJib3JkZXJDb2xvciI6IiIsImJhY2tncm91bmRDb2xvciI6IiIsImNvbG9yIjoiIn0sImN1c3RvbUNsYXNzIjoiYXNoLXJvdy0xLWNvbCJ9fV19LHsiYmxvY2tJRCI6MTY3MDg4OTg3NTgwMywidGVtcGxhdGUiOiJSb3ctMS0xLTEtMSIsImNoaWxkcmVuIjpbW3siYmxvY2tJRCI6MTY3MDg4OTg3NTgwNCwidGVtcGxhdGUiOiJDb250ZW50VGV4dCIsImNvbnRlbnQiOiJcbjxkaXYgY2xhc3M9XCJkYXNoLWNvbC1pY29uXCI+XG4gICAgPGVtIGNsYXNzPVwiZmFzIGZhLWNhbGVuZGFyLWFsdFwiPjxcL2VtPlxuPFwvZGl2PlxuPHAgc3R5bGU9XCJ0ZXh0LWFsaWduOiBjZW50ZXI7XCI+TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQgY29uc2VjdGV0dXIgYWRpcGlzaWNpbmcgZWxpdC4gVGVtcG9yZSBxdW9kIHVsbGFtIGRvbG9yZW1xdWUuIFNlcXVpLCBub24hIElsbG8gY29ycnVwdGkgZG9sb3JlbSwgcGxhY2VhdCBvYmNhZWNhdGkgaW1wZWRpdCBxdWFzIGFjY3VzYW11cyBxdW8gY29uc2VxdXVudHVyLiBTdW50IGFwZXJpYW0gcmVwdWRpYW5kYWUgb2ZmaWNpYSBwcm92aWRlbnQgZXhwbGljYWJvLjxcL3A+XG4iLCJvcHRpb25zIjp7InN0eWxlcyI6eyJwYWRkaW5nLXJpZ2h0IjoiMTVweCIsInBhZGRpbmctbGVmdCI6IjE1cHgifSwiYWNjZXNzVXNlcnMiOltdLCJleGNsdWRlVXNlcnMiOltdLCJvbkhvdmVycyI6eyJib3JkZXJDb2xvciI6IiIsImJhY2tncm91bmRDb2xvciI6IiIsImNvbG9yIjoiIn19fSx7ImJsb2NrSUQiOjE2NzA4ODk4NzU4MDgsInRlbXBsYXRlIjoiQnV0dG9uIiwib3B0aW9ucyI6eyJzdHlsZXMiOnsicGFkZGluZy1yaWdodCI6IjIwcHgiLCJwYWRkaW5nLWxlZnQiOiIyMHB4Iiwid2lkdGgiOiI1MCUiLCJoZWlnaHQiOiIiLCJ0ZXh0LWFsaWduIjoiY2VudGVyIiwiYm9yZGVyLXJhZGl1cyI6IjEwcHgiLCJwYWRkaW5nLXRvcCI6IjEwcHgiLCJwYWRkaW5nLWJvdHRvbSI6IjEwcHgiLCJiYWNrZ3JvdW5kLWNvbG9yIjoicmdiKDE0OCwgMTgzLCAyNDgpIn0sImxhYmVsIjoiQ2FsZW5kYXIiLCJhbGlnbm1lbnQiOiJjZW50ZXIiLCJzb3VyY2VUeXBlIjoibmF2Q2FsZW5kYXIiLCJwcm9qZWN0IjoiX3Byb2plY3RzIiwiYWNjZXNzVXNlcnMiOltdLCJleGNsdWRlVXNlcnMiOltdLCJvbkhvdmVycyI6eyJib3JkZXJDb2xvciI6IiIsImJhY2tncm91bmRDb2xvciI6InJnYigxMDMsIDEzOSwgMjA1KSIsImNvbG9yIjoiIiwiZm9yQmFja2dyb3VuZENvbG9yIjp0cnVlfSwiYXV0b21hdGlvblRlbXBsYXRlRW5hYmxlIjpmYWxzZSwibmV3VGFiIjpmYWxzZSwiY3VzdG9tQ2xhc3MiOiJkYXNoLWJ1dHRvbiIsIndpZHRoIjoiNTAlIn19XSxbeyJibG9ja0lEIjoxNjcwODg5ODc1ODA1LCJ0ZW1wbGF0ZSI6IkNvbnRlbnRUZXh0IiwiY29udGVudCI6IlxuPGRpdiBjbGFzcz1cImRhc2gtY29sLWljb25cIj5cbiAgICA8ZW0gY2xhc3M9XCJmYXMgZmEtaGFtbWVyXCI+PFwvZW0+XG48XC9kaXY+XG48cCBzdHlsZT1cInRleHQtYWxpZ246IGNlbnRlcjtcIj5Mb3JlbSBpcHN1bSBkb2xvciBzaXQgYW1ldCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LiBUZW1wb3JlIHF1b2QgdWxsYW0gZG9sb3JlbXF1ZS4gU2VxdWksIG5vbiEgSWxsbyBjb3JydXB0aSBkb2xvcmVtLCBwbGFjZWF0IG9iY2FlY2F0aSBpbXBlZGl0IHF1YXMgYWNjdXNhbXVzIHF1byBjb25zZXF1dW50dXIuIFN1bnQgYXBlcmlhbSByZXB1ZGlhbmRhZSBvZmZpY2lhIHByb3ZpZGVudCBleHBsaWNhYm8uPFwvcD5cbiIsIm9wdGlvbnMiOnsic3R5bGVzIjp7InBhZGRpbmctcmlnaHQiOiIxNXB4IiwicGFkZGluZy1sZWZ0IjoiMTVweCJ9LCJhY2Nlc3NVc2VycyI6W10sImV4Y2x1ZGVVc2VycyI6W10sIm9uSG92ZXJzIjp7ImJvcmRlckNvbG9yIjoiIiwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sb3IiOiIifX19LHsiYmxvY2tJRCI6MTY3MDg4OTg3NTgwOSwidGVtcGxhdGUiOiJCdXR0b24iLCJvcHRpb25zIjp7InN0eWxlcyI6eyJwYWRkaW5nLXJpZ2h0IjoiMjBweCIsInBhZGRpbmctbGVmdCI6IjIwcHgiLCJwYWRkaW5nLXRvcCI6IjEwcHgiLCJwYWRkaW5nLWJvdHRvbSI6IjEwcHgiLCJib3JkZXItcmFkaXVzIjoiMTBweCIsIndpZHRoIjoiNTAlIiwiaGVpZ2h0IjoiIiwidGV4dC1hbGlnbiI6ImNlbnRlciIsImJhY2tncm91bmQtY29sb3IiOiJyZ2IoMTQ4LCAxODMsIDI0OCkifSwibGFiZWwiOiJQcm9qZWN0cyIsImFsaWdubWVudCI6ImNlbnRlciIsInNvdXJjZVR5cGUiOiJwcm9qZWN0IiwicHJvamVjdCI6Il9yZWNlbnRfcHJvamVjdCIsImFjY2Vzc1VzZXJzIjpbXSwiZXhjbHVkZVVzZXJzIjpbXSwib25Ib3ZlcnMiOnsiYm9yZGVyQ29sb3IiOiIiLCJiYWNrZ3JvdW5kQ29sb3IiOiJyZ2IoMTAzLCAxMzksIDIwNSkiLCJjb2xvciI6IiIsImZvckJhY2tncm91bmRDb2xvciI6dHJ1ZX0sImN1c3RvbUNsYXNzIjoiZGFzaC1idXR0b24iLCJ3aWR0aCI6IjUwJSJ9fV0sW3siYmxvY2tJRCI6MTY3MDg4OTg3NTgwNiwidGVtcGxhdGUiOiJDb250ZW50VGV4dCIsImNvbnRlbnQiOiJcbjxkaXYgY2xhc3M9XCJkYXNoLWNvbC1pY29uXCI+XG4gICAgPGVtIGNsYXNzPVwiZmFzIGZhLXJlY2VpcHRcIj48XC9lbT5cbjxcL2Rpdj5cbjxwIHN0eWxlPVwidGV4dC1hbGlnbjogY2VudGVyO1wiPkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0IGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQuIFRlbXBvcmUgcXVvZCB1bGxhbSBkb2xvcmVtcXVlLiBTZXF1aSwgbm9uISBJbGxvIGNvcnJ1cHRpIGRvbG9yZW0sIHBsYWNlYXQgb2JjYWVjYXRpIGltcGVkaXQgcXVhcyBhY2N1c2FtdXMgcXVvIGNvbnNlcXV1bnR1ci4gU3VudCBhcGVyaWFtIHJlcHVkaWFuZGFlIG9mZmljaWEgcHJvdmlkZW50IGV4cGxpY2Fiby48XC9wPlxuIiwib3B0aW9ucyI6eyJzdHlsZXMiOnsicGFkZGluZy1yaWdodCI6IjE1cHgiLCJwYWRkaW5nLWxlZnQiOiIxNXB4In0sImFjY2Vzc1VzZXJzIjpbXSwiZXhjbHVkZVVzZXJzIjpbXSwib25Ib3ZlcnMiOnsiYm9yZGVyQ29sb3IiOiIiLCJiYWNrZ3JvdW5kQ29sb3IiOiIiLCJjb2xvciI6IiJ9fX0seyJibG9ja0lEIjoxNjcwODg5ODc1ODEwLCJ0ZW1wbGF0ZSI6IkJ1dHRvbiIsIm9wdGlvbnMiOnsic3R5bGVzIjp7InBhZGRpbmctcmlnaHQiOiIyMHB4IiwicGFkZGluZy1sZWZ0IjoiMjBweCIsInBhZGRpbmctdG9wIjoiMTBweCIsInBhZGRpbmctYm90dG9tIjoiMTBweCIsIndpZHRoIjoiNTAlIiwiaGVpZ2h0IjoiIiwidGV4dC1hbGlnbiI6ImNlbnRlciIsImJhY2tncm91bmQtY29sb3IiOiJyZ2IoMTQ4LCAxODMsIDI0OCkifSwibGFiZWwiOiJJbnZvaWNlcyIsImFsaWdubWVudCI6ImNlbnRlciIsInNvdXJjZVR5cGUiOiJuYXZPcGVuSW52b2ljZXMiLCJwcm9qZWN0IjoiX3Byb2plY3RzIiwiYWNjZXNzVXNlcnMiOltdLCJleGNsdWRlVXNlcnMiOltdLCJvbkhvdmVycyI6eyJib3JkZXJDb2xvciI6IiIsImJhY2tncm91bmRDb2xvciI6InJnYigxMDMsIDEzOSwgMjA1KSIsImNvbG9yIjoiIiwiZm9yQmFja2dyb3VuZENvbG9yIjp0cnVlfSwiY3VzdG9tQ2xhc3MiOiJkYXNoLWJ1dHRvbiIsIndpZHRoIjoiNTAlIn19XSxbeyJibG9ja0lEIjoxNjcwODg5ODc1ODA3LCJ0ZW1wbGF0ZSI6IkNvbnRlbnRUZXh0IiwiY29udGVudCI6IlxuPGRpdiBjbGFzcz1cImRhc2gtY29sLWljb25cIj5cbiAgICA8ZW0gY2xhc3M9XCJmYXMgZmEtZmlsZS1hbHRcIj48XC9lbT5cbjxcL2Rpdj5cbjxwIHN0eWxlPVwidGV4dC1hbGlnbjogY2VudGVyO1wiPkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0IGNvbnNlY3RldHVyIGFkaXBpc2ljaW5nIGVsaXQuIFRlbXBvcmUgcXVvZCB1bGxhbSBkb2xvcmVtcXVlLiBTZXF1aSwgbm9uISBJbGxvIGNvcnJ1cHRpIGRvbG9yZW0sIHBsYWNlYXQgb2JjYWVjYXRpIGltcGVkaXQgcXVhcyBhY2N1c2FtdXMgcXVvIGNvbnNlcXV1bnR1ci4gU3VudCBhcGVyaWFtIHJlcHVkaWFuZGFlIG9mZmljaWEgcHJvdmlkZW50IGV4cGxpY2Fiby48XC9wPlxuIiwib3B0aW9ucyI6eyJzdHlsZXMiOnsicGFkZGluZy1yaWdodCI6IjE1cHgiLCJwYWRkaW5nLWxlZnQiOiIxNXB4In0sImFjY2Vzc1VzZXJzIjpbXSwiZXhjbHVkZVVzZXJzIjpbXSwib25Ib3ZlcnMiOnsiYm9yZGVyQ29sb3IiOiIiLCJiYWNrZ3JvdW5kQ29sb3IiOiIiLCJjb2xvciI6IiJ9fX0seyJibG9ja0lEIjoxNjcwODg5ODc1ODExLCJ0ZW1wbGF0ZSI6IkJ1dHRvbiIsIm9wdGlvbnMiOnsic3R5bGVzIjp7InBhZGRpbmctcmlnaHQiOiIyMHB4IiwicGFkZGluZy1sZWZ0IjoiMjBweCIsInBhZGRpbmctdG9wIjoiMTBweCIsInBhZGRpbmctYm90dG9tIjoiMTBweCIsIndpZHRoIjoiNTAlIiwiaGVpZ2h0IjoiIiwidGV4dC1hbGlnbiI6ImNlbnRlciIsImJhY2tncm91bmQtY29sb3IiOiJyZ2IoMTQ4LCAxODMsIDI0OCkifSwibGFiZWwiOiJGaWxlcyIsImFsaWdubWVudCI6ImNlbnRlciIsInNvdXJjZVR5cGUiOiJuYXZGaWxlV2l0aE1lIiwicHJvamVjdCI6Il9wcm9qZWN0cyIsImFjY2Vzc1VzZXJzIjpbXSwiZXhjbHVkZVVzZXJzIjpbXSwib25Ib3ZlcnMiOnsiYm9yZGVyQ29sb3IiOiIiLCJiYWNrZ3JvdW5kQ29sb3IiOiJyZ2IoMTAzLCAxMzksIDIwNSkiLCJjb2xvciI6IiIsImZvckJhY2tncm91bmRDb2xvciI6dHJ1ZX0sImN1c3RvbUNsYXNzIjoiZGFzaC1idXR0b24iLCJ3aWR0aCI6IjUwJSJ9fV1dLCJvcHRpb25zIjp7InN0eWxlcyI6W10sImFjY2Vzc1VzZXJzIjpbXSwiZXhjbHVkZVVzZXJzIjpbXSwib25Ib3ZlcnMiOnsiYm9yZGVyQ29sb3IiOiIiLCJiYWNrZ3JvdW5kQ29sb3IiOiIiLCJjb2xvciI6IiJ9LCJjdXN0b21DbGFzcyI6ImRhc2gtcm93LTIifSwiY29sdW1tbiI6W3sib3B0aW9ucyI6eyJzdHlsZXMiOltdLCJhY2Nlc3NVc2VycyI6W10sImV4Y2x1ZGVVc2VycyI6W10sIm9uSG92ZXJzIjp7ImJvcmRlckNvbG9yIjoiIiwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sb3IiOiIifSwiY3VzdG9tQ2xhc3MiOiJkYXNoLXJvdy0yLWNvbCBkYXNoLWNvbC0xIn19LHsib3B0aW9ucyI6eyJzdHlsZXMiOltdLCJhY2Nlc3NVc2VycyI6W10sImV4Y2x1ZGVVc2VycyI6W10sIm9uSG92ZXJzIjp7ImJvcmRlckNvbG9yIjoiIiwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sb3IiOiIifSwiY3VzdG9tQ2xhc3MiOiJkYXNoLXJvdy0yLWNvbCBkYXNoLWNvbC0yIn19LHsib3B0aW9ucyI6eyJzdHlsZXMiOltdLCJhY2Nlc3NVc2VycyI6W10sImV4Y2x1ZGVVc2VycyI6W10sIm9uSG92ZXJzIjp7ImJvcmRlckNvbG9yIjoiIiwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sb3IiOiIifSwiY3VzdG9tQ2xhc3MiOiJkYXNoLXJvdy0yLWNvbCBkYXNoLWNvbC0zIn19LHsib3B0aW9ucyI6eyJzdHlsZXMiOltdLCJhY2Nlc3NVc2VycyI6W10sImV4Y2x1ZGVVc2VycyI6W10sIm9uSG92ZXJzIjp7ImJvcmRlckNvbG9yIjoiIiwiYmFja2dyb3VuZENvbG9yIjoiIiwiY29sb3IiOiIifSwiY3VzdG9tQ2xhc3MiOiJkYXNoLXJvdy0yLWNvbCBkYXNoLWNvbC00In19XX1d</script><script id="contentBlockEditor.portalPagesHash" type="text/json64-template" use-current-scope="1">W10=</script><script id="contentBlockEditor.editorData" type="text/json64-template" use-current-scope="1">eyJlZGl0b3JVVUlEIjoiMzExNTVhZTYtMmJlYy0yNTJiLTFiMTAtNTVhODIyZjRmODk4IiwiYXZhaWxhYmxlQmxvY2tzTGlzdE5hbWUiOiJjYmVEYXNoYm9hcmQiLCJhbGxvd1N0YWNrcyI6dHJ1ZSwic3RhY2tzRmlsdGVyc0NvbmZpZyI6eyJ0eXBlcyI6W3sibGFiZWwiOiJHZW5lcmFsIiwidmFsdWUiOiJjYmVTdGFjayJ9LHsibGFiZWwiOiJEYXNoYm9hcmQiLCJ2YWx1ZSI6ImNiZURhc2hib2FyZCJ9XSwic3RhY2tUeXBlcyI6W3sibGFiZWwiOiJDb250ZW50IiwidmFsdWUiOiJjb250ZW50In0seyJsYWJlbCI6IkhlYWRlciIsInZhbHVlIjoiaGVhZGVyIn0seyJsYWJlbCI6IkZvb3RlciIsInZhbHVlIjoiZm9vdGVyIn1dLCJzb3VyY2UiOlt7ImxhYmVsIjoiQWNjb3VudCIsInZhbHVlIjoiYWNjb3VudCJ9LHsibGFiZWwiOiJTeXN0ZW0iLCJ2YWx1ZSI6InN5c3RlbSJ9XSwiY2F0ZWdvcnkiOlt7ImxhYmVsIjoiU2FsZXMiLCJ2YWx1ZSI6MTAzMTk4Nn0seyJsYWJlbCI6Ikluc3VyYW5jZSBBZ2VuY3kiLCJ2YWx1ZSI6MzkzNzg2Nn0seyJsYWJlbCI6IkxlYWRzIiwidmFsdWUiOjEwMzE5ODR9LHsibGFiZWwiOiJMZWFybmluZyIsInZhbHVlIjoxMDM3Nzc2fSx7ImxhYmVsIjoiTGVnYWwiLCJ2YWx1ZSI6MTAzNzc3NH0seyJsYWJlbCI6Ik1hcmtldGluZyIsInZhbHVlIjoxMDM3NzYxfSx7ImxhYmVsIjoiTm9uLVByb2ZpdCIsInZhbHVlIjozOTM3ODY3fSx7ImxhYmVsIjoiT24tYm9hcmRpbmciLCJ2YWx1ZSI6MTAzNzc2M30seyJsYWJlbCI6IlBob3RvZ3JhcGh5IiwidmFsdWUiOjEwMzc3Nzd9LHsibGFiZWwiOiJQcm9mZXNzaW9uYWwgU2VydmljZXMiLCJ2YWx1ZSI6Mzc3ODU3N30seyJsYWJlbCI6IlJlYWwgRXN0YXRlIiwidmFsdWUiOjM3Nzg1NzN9LHsibGFiZWwiOiJJbmZsdWVuY2VyIiwidmFsdWUiOjM5Mzc4NzN9LHsibGFiZWwiOiJTYWxlcyBUZWFtIiwidmFsdWUiOjMwODYwMDN9LHsibGFiZWwiOiJTbWFsbCBCdXNpbmVzcyIsInZhbHVlIjozNzc4NTc5fSx7ImxhYmVsIjoiU29jaWFsIG1lZGlhIiwidmFsdWUiOjEwMzE5ODV9LHsibGFiZWwiOiJTb2Z0d2FyZSBEZXZlbG9wbWVudCIsInZhbHVlIjoxMDM3NzcwfSx7ImxhYmVsIjoiU3BvcnQgRml0bmVzcyIsInZhbHVlIjozOTM3ODY4fSx7ImxhYmVsIjoiVGF4IFByZXBhcmF0aW9uIiwidmFsdWUiOjEwMzc3NzN9LHsibGFiZWwiOiJUcmF2ZWwiLCJ2YWx1ZSI6MjAwMTQxNn0seyJsYWJlbCI6IlZpZGVvIiwidmFsdWUiOjEwMzc3Nzh9LHsibGFiZWwiOiJWaXJ0dWFsIEFzc2lzdGFudCBTZXJ2aWNlcyIsInZhbHVlIjozOTM3ODY5fSx7ImxhYmVsIjoiQ29uc3VsdGluZyIsInZhbHVlIjoxMDM3NzY3fSx7ImxhYmVsIjoiQWRtaW4iLCJ2YWx1ZSI6MzA4NjAwMX0seyJsYWJlbCI6IkFkdmVydGlzaW5nIiwidmFsdWUiOjEwMzE5ODJ9LHsibGFiZWwiOiJBZ2VuY3lcL1N0dWRpbyIsInZhbHVlIjozNzc4NTc1fSx7ImxhYmVsIjoiQW5pbWF0aW9uIiwidmFsdWUiOjEwMzc3Njl9LHsibGFiZWwiOiJBc3NldCBNYW5hZ2VtZW50IiwidmFsdWUiOjEwMzc3NzV9LHsibGFiZWwiOiJCb29ra2VlcGluZyIsInZhbHVlIjoxMDM3NzcyfSx7ImxhYmVsIjoiQnJhbmRpbmcgJiBJZGVudGl0eSIsInZhbHVlIjoxMDM3NzYyfSx7ImxhYmVsIjoiQ2xpZW50IFBvcnRhbCIsInZhbHVlIjozMDg2MDAyfSx7ImxhYmVsIjoiQ29hY2hpbmciLCJ2YWx1ZSI6MTAzNzc2Nn0seyJsYWJlbCI6IlByb3BlcnR5ICYgQ29uc3RydWN0aW9uIiwidmFsdWUiOjEwNDAyOTB9LHsibGFiZWwiOiJBY2NvdW50aW5nXC9DUEEiLCJ2YWx1ZSI6MTAzNzc3MX0seyJsYWJlbCI6IkRpZ2l0YWwgQWdlbmN5IiwidmFsdWUiOjM5Mzc4NjN9LHsibGFiZWwiOiJlQ29tbWVyY2UiLCJ2YWx1ZSI6Mzc3ODU3Nn0seyJsYWJlbCI6IkVkdWNhdGlvbiIsInZhbHVlIjozOTM3ODcxfSx7ImxhYmVsIjoiRXZlbnRzIiwidmFsdWUiOjM5Mzc4NzJ9LHsibGFiZWwiOiJGaW5hbmNlIiwidmFsdWUiOjEwMzE5ODN9LHsibGFiZWwiOiJGcmVlbGFuY2VyXC9Tb2xvIiwidmFsdWUiOjM3Nzg1Nzh9LHsibGFiZWwiOiJHZW5lcmFsIiwidmFsdWUiOjMwODYwMDB9LHsibGFiZWwiOiJHcmFwaGljIERlc2lnbiIsInZhbHVlIjoxMDM3NzY4fSx7ImxhYmVsIjoiSGVhbHRoY2FyZSIsInZhbHVlIjozNzc4NTc0fV19LCJhbGxvd1B1YmxpY0Jsb2NrcyI6ZmFsc2UsImF2YWlsYWJsZUJsb2NrcyI6eyJDb250ZW50VGV4dCI6eyJ0aXRsZSI6IlRleHQgQmxvY2siLCJkZXNjIjoiU2ltcGxlIHRleHQgYmxvY2siLCJpY29uIjoiY29udGVudC10ZXh0IiwiYXZhaWxhYmxlT25FbWFpbCI6dHJ1ZSwiYXZhaWxhYmxlIjp0cnVlfSwiQnV0dG9uIjp7InRpdGxlIjoiQnV0dG9uIEJsb2NrIiwiZGVzYyI6IkJ1dHRvbiB3aXRoIGxpbmsiLCJpY29uIjoiYnV0dG9uIiwiYXZhaWxhYmxlT25FbWFpbCI6dHJ1ZSwiX3N0YWZmQ3VzdG9tRmllbGRBc0FjdGlvbiI6ZmFsc2UsIl9oaWRlQXV0b1RlbXBsYXRlIjpmYWxzZSwiX2FsbG93Q29vcmRpbmF0b3JQcm9maWxlUGFnZXNJblB1YmxpY0Jsb2NrcyI6ZmFsc2UsIl9hbGxvd1NhbGVzcGVyc29uUHJvZmlsZVBhZ2VzSW5QdWJsaWNCbG9ja3MiOmZhbHNlLCJfYWxsb3dTdGFmZlByb2ZpbGVQcm9maWxlUGFnZXNJblB1YmxpY0Jsb2NrcyI6ZmFsc2UsImF2YWlsYWJsZSI6dHJ1ZX0sIlNpbmdsZUltYWdlIjp7InRpdGxlIjoiU2luZ2xlIEltYWdlIiwiZGVzYyI6IlNpbXBsZSBpbWFnZSBibG9jayIsImljb24iOiJzaW5nbGUtaW1hZ2UiLCJhdmFpbGFibGVPbkVtYWlsIjp0cnVlLCJfaW1hZ2VUeXBlT3B0aW9ucyI6W10sIl9wcm9kdWN0SW1hZ2UiOiIiLCJfc3RhZmZDdXN0b21GaWVsZEFzQWN0aW9uIjpmYWxzZSwiX3N0YWZmQ3VzdG9tRmllbGRBc1NvdXJjZSI6ZmFsc2UsIl9hbGxvd0N1c3RvbVN0YWZmSW5QdWJsaWMiOmZhbHNlLCJfaGlkZUF1dG9UZW1wbGF0ZSI6ZmFsc2UsIl9hbGxvd0Nvb3JkaW5hdG9yUHJvZmlsZVBhZ2VzSW5QdWJsaWNCbG9ja3MiOmZhbHNlLCJfYWxsb3dTYWxlc3BlcnNvblByb2ZpbGVQYWdlc0luUHVibGljQmxvY2tzIjpmYWxzZSwiX2FsbG93U3RhZmZQcm9maWxlUHJvZmlsZVBhZ2VzSW5QdWJsaWNCbG9ja3MiOmZhbHNlLCJhdmFpbGFibGUiOnRydWV9LCJJY29uIjp7InRpdGxlIjoiSWNvbiIsImRlc2MiOiJEaXNwbGF5IGEgRm9udCBBd2Vzb21lIGljb24iLCJpY29uIjoiaWNvbiIsImF2YWlsYWJsZU9uRW1haWwiOnRydWUsIl9zdGFmZkN1c3RvbUZpZWxkQXNBY3Rpb24iOmZhbHNlLCJfaGlkZUF1dG9UZW1wbGF0ZSI6ZmFsc2UsIl9hbGxvd0Nvb3JkaW5hdG9yUHJvZmlsZVBhZ2VzSW5QdWJsaWNCbG9ja3MiOmZhbHNlLCJfYWxsb3dTYWxlc3BlcnNvblByb2ZpbGVQYWdlc0luUHVibGljQmxvY2tzIjpmYWxzZSwiX2FsbG93U3RhZmZQcm9maWxlUHJvZmlsZVBhZ2VzSW5QdWJsaWNCbG9ja3MiOmZhbHNlLCJhdmFpbGFibGUiOnRydWV9LCJFbXB0eVNwYWNlIjp7InRpdGxlIjoiRW1wdHkgU3BhY2UiLCJkZXNjIjoiQmxhbmsgc3BhY2Ugd2l0aCBjdXN0b20gaGVpZ2h0IiwiaWNvbiI6ImVtcHR5LXNwYWNlIiwiYXZhaWxhYmxlT25FbWFpbCI6dHJ1ZSwiYXZhaWxhYmxlIjp0cnVlfSwiSG9yaXpvbnRhbFNlcGFyYXRvciI6eyJ0aXRsZSI6IlNlcGFyYXRvciIsImRlc2MiOiJIb3Jpem9udGFsIHNlcGFyYXRvciBsaW5lIiwiaWNvbiI6Imhvcml6b250YWwtc2VwYXJhdG9yIiwiYXZhaWxhYmxlT25FbWFpbCI6dHJ1ZSwiYXZhaWxhYmxlIjp0cnVlfSwiVmlkZW8iOnsidGl0bGUiOiJWaWRlbyBCbG9jayIsImRlc2MiOiJVc2Ugd2l0aCBZb3VUdWJlLCBWaW1lbywgZXRjLiIsImljb24iOiJ2aWRlbyIsIl9zdGFmZkN1c3RvbUZpZWxkQXNTb3VyY2UiOmZhbHNlLCJhdmFpbGFibGUiOnRydWV9LCJDaGFydCI6eyJ0aXRsZSI6IkNoYXJ0IiwiZGVzYyI6IkFuaW1hdGVkIGNoYXJ0cyIsImljb24iOiJjaGFydC1iYXIiLCJfc3RhZmZDdXN0b21GaWVsZEFzU291cmNlIjpmYWxzZSwiYXZhaWxhYmxlIjp0cnVlfSwiUHJvZ3Jlc3NCYXIiOnsidGl0bGUiOiJQcm9ncmVzcyBCYXIiLCJkZXNjIjoiQW5pbWF0ZWQgcHJvZ3Jlc3MgYmFyIiwiaWNvbiI6InByb2dyZXNzLWJhciIsIl9zdGFmZkN1c3RvbUZpZWxkQXNTb3VyY2UiOmZhbHNlLCJhdmFpbGFibGUiOnRydWV9LCJSZXBvcnRpbmcyIjp7InRpdGxlIjoiUmVwb3J0aW5nIEJsb2NrIiwiZGVzYyI6IkRpc3BsYXkgRGF0YSBSZXBvcnRzICYgQ2hhcnRzIiwiaWNvbiI6InJlcG9ydGluZyIsImF2YWlsYWJsZSI6dHJ1ZX0sIkVtYmVkIjp7InRpdGxlIjoiRW1iZWQgQmxvY2siLCJkZXNjIjoiVXNlIHRoaXMgZm9yIGVtYmVkIGNvZGVzIiwiaWNvbiI6ImVtYmVkIiwiYXZhaWxhYmxlIjp0cnVlfSwiSWZyYW1lIjp7InRpdGxlIjoiaUZyYW1lIEJsb2NrIiwiZGVzYyI6IkVhc2lseSBlbWJlZCBleHRlcm5hbCBVUkxzIiwiaWNvbiI6ImlmcmFtZSIsIl9zdGFmZkN1c3RvbUZpZWxkQXNTb3VyY2UiOmZhbHNlLCJhdmFpbGFibGUiOnRydWV9LCJUcmFpbHMiOnsidGl0bGUiOiJUcmFpbHMgQmxvY2siLCJkZXNjIjoiRW1iZWQgVHJhaWwgKGludGVyYWN0aXZlIGd1aWRlKSIsImljb24iOiJ0cmFpbHMiLCJhdmFpbGFibGUiOnRydWV9LCJDaGVja2xpc3QiOnsidGl0bGUiOiJDaGVja2xpc3QiLCJkZXNjIjoiQ3JlYXRlZCBDaGVja2xpc3QiLCJpY29uIjoiY2hlY2tsaXN0IiwiYXZhaWxhYmxlIjp0cnVlfSwiR2V0U3RhcnRlZCI6eyJ0aXRsZSI6IkdldCBTdGFydGVkIEJsb2NrIiwiZGVzYyI6Ik9ubHkgdmlzaWJsZSB0byBTdXBlciBBZG1pbiIsImljb24iOiJnZXQtc3RhcnRlZCIsImF2YWlsYWJsZSI6dHJ1ZX0sIk15SW52b2ljZXMyIjp7InRpdGxlIjoiTXkgSW52b2ljZXMgQmxvY2siLCJkZXNjIjoiU2hvdyBteSBpbnZvaWNlcyIsImljb24iOiJteS1pbnZvaWNlcyIsImF2YWlsYWJsZSI6dHJ1ZX0sIk15VGFza3MyIjp7InRpdGxlIjoiTXkgVGFza3MgQmxvY2siLCJkZXNjIjoiU2hvdyBteSB0YXNrcyIsImljb24iOiJteS10YXNrcyIsImF2YWlsYWJsZSI6dHJ1ZX0sIk15U2NoZWR1bGUiOnsidGl0bGUiOiJNeSBTY2hlZHVsZSBCbG9jayIsImRlc2MiOiJTaG93IG15IENhbGVuZGFyIEl0ZW1zIiwiaWNvbiI6Im15LXNjaGVkdWxlIiwiYXZhaWxhYmxlIjp0cnVlfSwiU3VwcG9ydFRpY2tldHMiOnsidGl0bGUiOiJTdXBwb3J0IFRpY2tldCBCbG9jayIsImRlc2MiOiJUcmlhZ2UgU3VwcG9ydCBUaWNrZXRzIGZyb20gdGhlIGRhc2hib2FyZCIsImljb24iOiJzdXBwb3J0LXRpY2tldHMiLCJhdmFpbGFibGUiOnRydWV9LCJNZXNzYWdpbmciOnsidGl0bGUiOiJNZXNzYWdlcyIsImRlc2MiOiJSZWFkIGFuZCByZXBseSB0byByZWNlbnQgcHJpdmF0ZSBtZXNzYWdlcyBmcm9tIHRoZSBkYXNoYm9hcmQiLCJpY29uIjoibWVzc2FnaW5nIiwiYXZhaWxhYmxlIjp0cnVlfSwiQWxsVGFza3MiOnsidGl0bGUiOiJBbGwgVGFza3MgQmxvY2siLCJkZXNjIjoiU2hvdyBhbGwgVGFza3MiLCJpY29uIjoibXktdGFza3MiLCJhdmFpbGFibGUiOnRydWV9LCJQcm9qZWN0cyI6eyJ0aXRsZSI6IlByb2plY3RzIiwiZGVzYyI6IlNob3cgYWxsIFByb2plY3RzIiwiaWNvbiI6InByb2plY3RzIiwiYXZhaWxhYmxlIjp0cnVlfSwiQW5ub3VuY2VtZW50cyI6eyJ0aXRsZSI6IkFubm91bmNlbWVudHMgQmxvY2siLCJkZXNjIjoiU2hvdyBhbm5vdW5jZW1lbnRzIiwiaWNvbiI6ImFubm91bmNlbWVudHMiLCJhdmFpbGFibGUiOnRydWV9LCJMaXZlU3RyZWFtMiI6eyJ0aXRsZSI6IkFjdGl2aXR5IFN0cmVhbSBCbG9jayIsImRlc2MiOiJTaG93IEFjdGl2aXR5IFN0cmVhbSIsImljb24iOiJsaXZlLXN0cmVhbSIsImF2YWlsYWJsZSI6dHJ1ZX0sIldlbGNvbWUiOnsidGl0bGUiOiJXZWxjb21lIEJsb2NrIiwiZGVzYyI6IldlbGNvbWUgdXNlcnMgdG8geW91ciBQb3J0YWwiLCJpY29uIjoid2VsY29tZSIsImF2YWlsYWJsZSI6dHJ1ZX0sIkNvbnRhY3RzMiI6eyJ0aXRsZSI6IkNSTSBGaWx0ZXIgQmxvY2siLCJkZXNjIjoiTGlzdCBDb250YWN0cyBCeSBmaWx0ZXIiLCJpY29uIjoiY29udGFjdHMiLCJhdmFpbGFibGUiOnRydWV9LCJTdGFmZkZpbHRlciI6eyJ0aXRsZSI6IlN0YWZmIEZpbHRlciBCbG9jayIsImRlc2MiOiJMaXN0IFN0YWZmIEJ5IGZpbHRlciIsImljb24iOiJjb250YWN0cyIsImF2YWlsYWJsZSI6dHJ1ZX0sIkZpbGVVcGxvYWQiOnsidGl0bGUiOiJVcGxvYWQgQmxvY2siLCJkZXNjIjoiRW5hYmxlIGVhc3kgdXBsb2FkaW5nIG9mIGZpbGVzIiwiaWNvbiI6InVwbG9hZCIsImF2YWlsYWJsZSI6dHJ1ZX0sIkZpbGVEb3dubG9hZCI6eyJ0aXRsZSI6IkRvd25sb2FkIEJsb2NrIiwiZGVzYyI6IkVuYWJsZSBlYXN5IGRvd25sb2FkaW5nIG9mIGZpbGVzIiwiaWNvbiI6ImRvd25sb2FkIiwiYXZhaWxhYmxlIjp0cnVlfSwiRm9ybSI6eyJ0aXRsZSI6IkZvcm0gQmxvY2siLCJkZXNjIjoiRGlzcGxheSBBIEZvcm0iLCJpY29uIjoiZm9ybSIsIl9mb3JtVHlwZSI6IiIsImF2YWlsYWJsZSI6dHJ1ZX0sIlJvdyI6eyJza2lwT25BZGRCbG9jayI6dHJ1ZX0sIkNvbHVtbiI6eyJza2lwT25BZGRCbG9jayI6dHJ1ZX0sIk5hdmlnYXRpb24iOnsic2tpcE9uQWRkQmxvY2siOnRydWV9LCJJY29uTGlzdCI6eyJza2lwT25BZGRCbG9jayI6dHJ1ZX0sIkhlYWRlciI6eyJza2lwT25BZGRCbG9jayI6dHJ1ZX0sIkZvb3RlciI6eyJza2lwT25BZGRCbG9jayI6dHJ1ZX19LCJvbmx5UHVibGljQmxvY2tzIjpmYWxzZSwiaXNFbWFpbEJlaGF2aW9yIjpmYWxzZSwiaXNIVE1MQmVoYXZpb3IiOnRydWUsImVkaXRvckNvbmZpZyI6W10sImlzVGVzdENvbXBhbnkiOmZhbHNlLCJkZWZhdWx0VGV4dENvbnRlbnQiOiI8cD5UaGlzIGlzIGEgdGV4dCBibG9jay4gQ2xpY2sgdGhlIEVkaXQgYnV0dG9uIHRvIGFkZCB5b3VyIG93biBjb250ZW50LiA8YnIgXC8+IExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNjaW5nIGVsaXQuIFV0IGVsaXQgdGVsbHVzLCBsdWN0dXMgbmVjIHVsbGFtY29ycGVyIG1hdHRpcywgcHVsdmluYXIgZGFwaWJ1cyBsZW8uPFwvcD4iLCJmaWxlVXBsb2FkVVJMIjoiXC8yMDRmYzBlYi0yYzY2LTRjOWQtYWY1Yy04ZDMzY2RjZWNmZjZcL3VwbG9hZEJsb2NrXC9fX3Rva2VuX18iLCJmaWxlRG93bmxvYWRVcGxvYWROZXciOiJcLzIwNGZjMGViLTJjNjYtNGM5ZC1hZjVjLThkMzNjZGNlY2ZmNlwvZG93bmxvYWRCbG9ja1wvX190b2tlbl9fIiwibG9ja2VkTW9kZSI6ZmFsc2UsImNsaWNrQWN0aW9uTGlzdHMiOnsicHJpdmF0ZSI6eyJjdXN0b21GaWVsZCI6Ik5BVl9UT19DVVNUT01fRklFTEQiLCJuYXZTdGFydFBhZ2UiOiJOQVZfVE9fU1RBUlRfUEFHRSIsInBvcnRhbFBhZ2UiOiJOQVZfVE9fUE9SVEFMX1BBR0UiLCJwcm9qZWN0IjoiTkFWX1RPX1BST0pFQ1QiLCJuYXZDYWxlbmRhciI6Ik5BVl9UT19DQUxFTkRBUiIsImFwcG9pbnRtZW50IjoiT1BFTl9BUFBPSU5UTUVOVF9TQ0hFRFVMSU5HIiwibmF2TmV3TWVzc2FnZSI6Ik5BVl9UT19ORVdfTUVTU0FHRSIsIm5hdk5ld1dvcmtSZXF1ZXN0IjoiTkFWX1RPX05FV19XT1JLX1JFUVVFU1QiLCJuYXZGaWxlV2l0aE1lIjoiTkFWX1RPX0ZJTEVTX1NIQVJFRF9NRSIsIm5hdkJpbGxEYXNoYm9hcmQiOiJOQVZfVE9fTVlfQklMTElOR19EQVNIQk9BUkQiLCJuYXZPcGVuSW52b2ljZXMiOiJOQVZfVE9fT1BFTl9JTlZPSUNFUyIsIm5hdk9wZW5Fc3RpbWF0ZXMiOiJOQVZfVE9fT1BFTl9FU1RJTUFURVMiLCJuYXZPcGVuUHJvcG9zYWxzIjoiTkFWX1RPX09QRU5fUFJPUE9TQUxTIiwibmF2Q29udHJhY3RzQXdhaXRpbmdNZSI6Ik5BVl9UT19DT05UUkFDVFNfQVdBSVRJTkdfTUUiLCJuYXZTdWJzY3JpcHRpb25zTGlzdCI6Ik5BVl9UT19TVUJTQ1JJUFRJT05TX0xJU1QiLCJuYXZQYXltZW50c0hpc3RvcnkiOiJOQVZfVE9fUEFZTUVOVFNfSElTVE9SWSIsIm5hdlByb2plY3RDbGllbnRUYWxrIjoiTkFWX1RPX1BST0pFQ1RfQ0xJRU5UX1RBTEsiLCJuYXZQcm9qZWN0RmlsZXMiOiJOQVZfVE9fUFJPSkVDVF9GSUxFUyIsImZvcm1TdGFmZlN1Ym1pdCI6Ik5BVl9GT1JNX1NUQUZGX1NVQk1JVCIsImNvb3JkaW5hdG9yUHJvZmlsZVBhZ2UiOiJOQVZfVE9fQ09PUkRJTkFUT1JfUFJPRklMRV9QQUdFIiwic2FsZXNwZXJzb25Qcm9maWxlUGFnZSI6Ik5BVl9UT19TQUxFU1BFUlNPTl9QUk9GSUxFX1BBR0UiLCJzdGFmZlByb2ZpbGVQYWdlIjoiTkFWX1RPX1NUQUZGX1BST0ZJTEVfUEFHRSIsImFwcGx5QXV0b21hdGlvblRlbXBsYXRlIjoiQVBQTFlfQUNUSU9OU19URU1QTEFURSIsInVybCI6Ik5BVl9UT19VUkwifSwiZW1haWwiOnsidXJsIjoiTkFWX1RPX1VSTCIsImFwcGx5QXV0b21hdGlvblRlbXBsYXRlIjoiQVBQTFlfQUNUSU9OU19URU1QTEFURSJ9LCJwdWJsaWMiOnsiYmFzZSI6eyJ1cmwiOiJOQVZfVE9fVVJMIn0sImZsYWdnZWQiOlt7ImRlc3RpbmF0aW9uIjoiY3VzdG9tRmllbGQiLCJsYWJlbEtleSI6Ik5BVl9UT19DVVNUT01fRklFTEQiLCJmbGFnIjoic3RhZmZDdXN0b21GaWVsZEFzQWN0aW9uIn0seyJkZXN0aW5hdGlvbiI6ImNvb3JkaW5hdG9yUHJvZmlsZVBhZ2UiLCJsYWJlbEtleSI6Ik5BVl9UT19DT09SRElOQVRPUl9QUk9GSUxFX1BBR0UiLCJmbGFnIjoiYWxsb3dDb29yZGluYXRvclByb2ZpbGVQYWdlc0luUHVibGljQmxvY2tzIn0seyJkZXN0aW5hdGlvbiI6InNhbGVzcGVyc29uUHJvZmlsZVBhZ2UiLCJsYWJlbEtleSI6Ik5BVl9UT19TQUxFU1BFUlNPTl9QUk9GSUxFX1BBR0UiLCJmbGFnIjoiYWxsb3dTYWxlc3BlcnNvblByb2ZpbGVQYWdlc0luUHVibGljQmxvY2tzIn0seyJkZXN0aW5hdGlvbiI6InN0YWZmUHJvZmlsZVBhZ2UiLCJsYWJlbEtleSI6Ik5BVl9UT19TVEFGRl9QUk9GSUxFX1BBR0UiLCJmbGFnIjoiYWxsb3dTdGFmZlByb2ZpbGVQcm9maWxlUGFnZXNJblB1YmxpY0Jsb2NrcyJ9XX19fQ==</script><script id="contentBlockEditor.cookedData" type="text/json64-template" use-root-scope="1">W10=</script><script id="contentBlockEditor.context" type="text/json64-template" use-root-scope="1">W10=</script><script id="contentBlockEditor.user" type="text/json64-template" use-root-scope="1">eyJpc0V4dGVybmFsIjpmYWxzZSwiY3VzdG9tU3RhZmZJbWFnZXMiOnsiYXZhdGFyIjoiXC9pbWFnZXNcL25vLWxvZ28tc3F1YXJlLnBuZyJ9LCJjdXN0b21GaWVsZHMiOltdLCJwZXJtaXNzaW9ucyI6eyJwcm9qZWN0Ijp0cnVlLCJjYWxlbmRhciI6dHJ1ZSwiZmlsZXMiOnRydWUsIm5ld01lc3NhZ2UiOnRydWUsIndvcmtSZXF1ZXN0Ijp0cnVlLCJ3b3JrUmVxdWVzdFN1YiI6dHJ1ZSwiYmlsbGluZyI6dHJ1ZSwiaW52b2ljZXMiOnRydWUsImVzdGltYXRlcyI6dHJ1ZSwic3Vic2NyaXB0aW9ucyI6dHJ1ZSwicHJvcG9zYWxzIjp0cnVlLCJjb250cmFjdHMiOnRydWUsInBheW1lbnRzIjp0cnVlLCJsaXZlU3RyZWFtIjp0cnVlLCJteVRhc2tzIjp0cnVlLCJhbGxUYXNrcyI6dHJ1ZSwiYWxsSW52b2ljZXMiOnRydWUsImFsbEVzdGltYXRlcyI6dHJ1ZSwiYWxsUHJvcG9zYWxzIjp0cnVlLCJhbGxQYXltZW50cyI6dHJ1ZSwiYWxsQ29udGFjdHMiOnRydWUsImFsbENvbXBhbmllcyI6dHJ1ZSwiYWxsQ2lyY2xlcyI6dHJ1ZSwiYWxsVGVhbXMiOnRydWV9fQ==</script>
+
+    
+</sd-content-block-editor>
+</div>
